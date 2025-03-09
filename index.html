@@ -5,272 +5,591 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khant Phyo Wai | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.png"> 
+    <link rel="icon" type="image/x-icon" href="images/favicon.jpg">
 </head>
 <body>
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" id="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h1>Khant Phyo Wai</h1>
-            </div>
-            <nav class="nav-links">
-                <a href="#intro" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="#about" class="nav-link"><i class="fas fa-user"></i> About Me</a>
-                <a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a>
-                <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
-                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
-            </nav>
-            <div class="social-links" style="justify-content: center; margin-bottom: 2rem;">
-                <a href="https://github.com/DolphinsAreWeird" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/khant-phyo-wai-065b411a4/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=100025576650913" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Hero Section -->
-            <section id="intro">
-                <img src="images/profile.jpg" alt="Background" class="hero-bg">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <h1>Khant Phyo Wai</h1>
-                    <p>Business Strategist & Tech Enthusiast</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about">
-                <h2 class="section-title">About Me</h2>
-                <p class="subtitle">Passionate about business strategy, technology, and meaningful innovation.</p>
-
-                <div class="about-grid">
-                    <div class="about-card fade-in-up">
-                        <div class="about-card-img-container">
-                            <img src="images/sayar ye wai blurred.jpg" alt="My Journey">
-                        </div>
-                        <div class="about-card-content">
-                            <h3>My Journey</h3>
-                            <p>I started as a student at BEHS2, South Okkalapa in Yangon, Myanmar, and later earned a place at Yangon Technological University, the country's top technical university.</p>
-                            <p>When COVID-19 and political unrest disrupted my studies, I refused to give up and kept learning—eventually earning a fully-funded scholarship at CMKL University where I now work on projects in AI, gaming, and cybersecurity.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="about-card fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="about-card-img-container">
-                            <img src="images/cat.webp" alt="My Skills">
-                        </div>
-                        <div class="about-card-content">
-                            <h3>My Skills</h3>
-                            <p>I specialize in business strategy, data-driven decision-making, and product development, blending technical expertise with market insights.</p>
-                            <p>My experience spans business analysis, financial modeling, and UI/UX design. I use tools like Python, Unity, and AI-driven analytics to optimize user engagement and drive innovation.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="about-card fade-in-up" style="animation-delay: 0.4s;">
-                        <div class="about-card-img-container">
-                            <img src="images/jerry.webp" alt="My Inspirations">
-                        </div>
-                        <div class="about-card-content">
-                            <h3>My Inspirations</h3>
-                            <p>I am driven by the intersection of technology, business, and design, where data-driven strategies create real-world impact.</p>
-                            <p>Inspired by game development and interactive media, I believe in making technology more engaging, accessible, and meaningful for everyone.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="subtitle">A showcase of my creative and technical endeavors.</p>
-
-                <div class="project-grid">
-                    <div class="project-card fade-in-up">
-                        <div class="project-img-container">
-                            <img src="images/Sonar.webp" alt="SonarAudiobooks Project" class="project-image">
-                        </div>
-                        <div class="project-overlay">
-                            <h3>SonarAudiobooks</h3>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">SonarAudiobooks</h3>
-                            <div class="project-tags">
-                                <span class="tag">AI</span>
-                                <span class="tag">Accessibility</span>
-                                <span class="tag">Audio Processing</span>
-                            </div>
-                            <p class="project-description">A groundbreaking tool that transforms physical books into natural-sounding audiobooks for the blind, highlighting my commitment to accessibility and AI innovation.</p>
-                            <a href="https://sonaraudiobooks.com/" class="btn btn-dark">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="project-img-container">
-                            <img src="images/404.webp" alt="Project 404" class="project-image">
-                        </div>
-                        <div class="project-overlay">
-                            <h3>Project 404</h3>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Project 404</h3>
-                            <div class="project-tags">
-                                <span class="tag">Education</span>
-                                <span class="tag">Business Strategy</span>
-                                <span class="tag">Project Management</span>
-                            </div>
-                            <p class="project-description">A group of several projects targeting education, accessibility and innovative solutions where I work both as a business initiative and a project manager.</p>
-                            <a href="https://lab404.mystrikingly.com/" class="btn btn-dark">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in-up" style="animation-delay: 0.4s;">
-                        <div class="project-img-container">
-                            <img src="images/harmony.webp" alt="Harmony Vision Project" class="project-image">
-                        </div>
-                        <div class="project-overlay">
-                            <h3>Harmony Vision</h3>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Harmony Vision</h3>
-                            <div class="project-tags">
-                                <span class="tag">AR</span>
-                                <span class="tag">Music Education</span>
-                                <span class="tag">UX Design</span>
-                            </div>
-                            <p class="project-description">An innovative project that led to an application prototype to create an easier, more intuitive way of guitar learning using AR technologies.</p>
-                            <a href="#" class="btn btn-dark">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience">
-                <h2 class="section-title">Experience</h2>
-                <p class="subtitle">My professional journey and growth opportunities.</p>
-
-                <div class="timeline">
-                    <div class="timeline-item left fade-in-up">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2023 - Present</div>
-                            <h3>Business Strategy Consultant</h3>
-                            <h4>CMKL University</h4>
-                            <p>During my apprenticeship, I gained hands-on experience in project management and developed strong communication skills. I worked on business plans, financial analysis, and game development projects.</p>
-                            <a href="https://lab404.mystrikingly.com/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="timeline-item right fade-in-up" style="animation-delay: 0.3s">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2022 - 2023</div>
-                            <h3>AI-Centric Designer</h3>
-                            <h4>CMKL University</h4>
-                            <p>Under Professor Justin Paulsen, I worked on a pipeline to streamline game asset creation using GenAI directed for local studios and publishers, emphasizing technology, innovation, and localization.</p>
-                            <a href="https://www.cmkl.ac.th/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="timeline-item left fade-in-up" style="animation-delay: 0.6s">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2021 - 2022</div>
-                            <h3>Teaching Assistant</h3>
-                            <h4>Teacher Su International School</h4>
-                            <p>My time focused on English teaching and student support, where I learned valuable skills like child mental health, teaching methodologies, curriculum design, and team coordination.</p>
-                            <a href="https://www.teachersucenter.com/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="subtitle">Let's connect and explore opportunities together.</p>
-
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="contact-card fade-in-up">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="contact-card-content">
-                                <h3>Location</h3>
-                                <p>Lat Krabang, Bangkok, Thailand</p>
-                            </div>
-                        </div>
-                        <div class="contact-card fade-in-up" style="animation-delay: 0.2s">
-                            <i class="fas fa-phone"></i>
-                            <div class="contact-card-content">
-                                <h3>Phone</h3>
-                                <p>+66920910228</p>
-                            </div>
-                        </div>
-                        <div class="contact-card fade-in-up" style="animation-delay: 0.4s">
-                            <i class="fas fa-envelope"></i>
-                            <div class="contact-card-content">
-                                <h3>Email</h3>
-                                <p>kelvinwai.khantphyo@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://github.com/DolphinsAreWeird" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/khant-phyo-wai-065b411a4/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=100025576650913" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/khant_p_wai/" class="social-link"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="contact-form fade-in-up" style="animation-delay: 0.6s">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Subject">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer>
-                <div class="footer-content">
-                    <h3>Khant Phyo Wai</h3>
-                    <p>Business Strategist & Tech Enthusiast, dedicated to creating innovative solutions that make a difference.</p>
-                    <div class="social-links" style="justify-content: center; margin-top: 1.5rem;">
-                        <a href="https://github.com/DolphinsAreWeird" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/khant-phyo-wai-065b411a4/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=100025576650913" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/khant_p_wai/" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="footer-copyright">
-                        <p>&copy; 2025 Khant Phyo Wai. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
-        </div>
+    <!-- Background Elements -->
+    <div class="bg-elements">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="gradient-bg"></div>
+        <div id="particles-js"></div>
     </div>
 
-    <!-- JavaScript -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>KP</span>
+            </div>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="theme-switch">
+                    <i class="fas fa-moon"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="animate">Khant Phyo Wai</h1>
+            <div class="typewriter">
+                <span id="typed-text"></span><span class="cursor">|</span>
+            </div>
+            <p class="animate">Bringing innovative solutions at the intersection of technology, business, and creative design</p>
+            <div class="hero-buttons animate">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a passionate business strategist and AI engineer with experience in market research, financial analysis, copywriting, and game development. With a strong foundation in AI and Computer Engineering from CMKL University, I specialize in creating meaningful solutions that bridge technical capabilities with business objectives.</p>
+                    <p>My journey began at Yangon Technological University, but when disrupted by circumstances, I persevered and earned a scholarship at CMKL University. Now I work on projects spanning AI, business strategy, and interactive technologies.</p>
+                    
+                    <div class="tech-stack-grid">
+                        <div class="tech-logo" title="Python">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-logo" title="TensorFlow">
+                            <i class="fas fa-brain"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="tech-logo" title="PyTorch">
+                            <i class="fas fa-fire"></i>
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="tech-logo" title="Java">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-logo" title="JavaScript">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-logo" title="HTML5">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-logo" title="CSS3">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-logo" title="React">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-logo" title="SQL">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="tech-logo" title="Git">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-logo" title="Cloud">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="8">0</span>
+                            <span class="stat-label">Completed Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-label">Ongoing Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3.7">0</span>
+                            <span class="stat-label">GPA / 4.0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="images/profile.jpg" alt="Khant Phyo Wai">
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/DolphinsAreWeird" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/khant-phyo-wai-065b411a4/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100025576650913" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/khant_p_wai/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <h2 class="section-title">My Expertise</h2>
+            
+            <div class="expertise-categories">
+                <div class="expertise-category">
+                    <div class="expertise-header">
+                        <div class="expertise-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>AI & Data Science</h3>
+                        <p class="expertise-summary">Leveraging advanced algorithms and data analysis to create intelligent solutions for complex problems.</p>
+                    </div>
+                    <div class="expertise-skills">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Machine Learning</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Computer Vision</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Natural Language Processing</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Data Analysis</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="expertise-category">
+                    <div class="expertise-header">
+                        <div class="expertise-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Business Strategy</h3>
+                        <p class="expertise-summary">Developing comprehensive business plans and market analyses to drive sustainable growth and innovation.</p>
+                    </div>
+                    <div class="expertise-skills">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Market Analysis</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Monetization Planning</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Business Development</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Digital Marketing</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="expertise-category">
+                    <div class="expertise-header">
+                        <div class="expertise-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h3>Creative & Design</h3>
+                        <p class="expertise-summary">Creating engaging content and immersive user experiences through thoughtful design and compelling storytelling.</p>
+                    </div>
+                    <div class="expertise-skills">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Copywriting</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Game Development</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">UX Design</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Content Creation</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+                <button class="filter-btn" data-filter="cv">Computer Vision</button>
+                <button class="filter-btn" data-filter="nlp">NLP</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="digital-twin">Digital Twin</button>
+            </div>
+            
+            <div class="project-grid">
+                <div class="project-card" data-category="ai business cv">
+                    <div class="project-img">
+                        <img src="images/Sonar.webp" alt="SonarAudiobooks">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Accessibility</span>
+                            <span class="tag">Business</span>
+                        </div>
+                        <h3>SonarAudiobooks</h3>
+                        <p>A tool transforming physical books into audiobooks for the visually impaired using AI and computer vision.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag skill-tag-ai">Computer Vision</span>
+                            <span class="skill-tag skill-tag-data">OCR</span>
+                            <span class="skill-tag skill-tag-business">Market Research</span>
+                        </div>
+                        <a href="https://sonaraudiobooks.com/" target="_blank" class="project-link">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="design ai">
+                    <div class="project-img">
+                        <img src="images/harmony.webp" alt="Harmony Vision">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">AR</span>
+                            <span class="tag">Game Dev</span>
+                            <span class="tag">UX Design</span>
+                        </div>
+                        <h3>Harmony Vision</h3>
+                        <p>An AR guitar training application allowing users to learn interactively through AR glasses with innovative UI.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag skill-tag-design">UI/UX</span>
+                            <span class="skill-tag skill-tag-ai">AR Integration</span>
+                            <span class="skill-tag skill-tag-business">User Research</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="business data">
+                    <div class="project-img">
+                        <img src="images/404.webp" alt="My Happy Thai Neighbourhood">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Business Strategy</span>
+                            <span class="tag">Project Management</span>
+                        </div>
+                        <h3>Thai Neighbourhood</h3>
+                        <p>Led business strategy and financial modeling for this community-focused initiative under CMKL University's R&D program.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag skill-tag-business">Financial Modeling</span>
+                            <span class="skill-tag skill-tag-data">Community Analysis</span>
+                            <span class="skill-tag skill-tag-business">Strategic Planning</span>
+                        </div>
+                        <a href="https://lab404.mystrikingly.com/" target="_blank" class="project-link">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ai data business digital-twin">
+                    <div class="project-img">
+                        <img src="images/elevator.jpg" alt="AI-Levator">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Digital Twin</span>
+                            <span class="tag">Business Plan</span>
+                        </div>
+                        <h3>AI-Levator</h3>
+                        <p>An AI-powered elevator system that adapts to real-time conditions, reducing wait times by predicting peak usage and adjusting elevator dispatch dynamically.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag skill-tag-ai">Machine Learning</span>
+                            <span class="skill-tag skill-tag-data">Real-time Data</span>
+                            <span class="skill-tag skill-tag-business">Financial Modeling</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="nlp ai">
+                    <div class="project-img">
+                        <img src="images/fallacy.jpg" alt="Fallacy Hunter">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">NLP</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">Text Analysis</span>
+                        </div>
+                        <h3>Fallacy Hunter</h3>
+                        <p>An NLP-based tool that identifies logical fallacies in text-based arguments, helping improve critical thinking and argumentation skills.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag skill-tag-nlp">Natural Language Processing</span>
+                            <span class="skill-tag skill-tag-ai">Text Classification</span>
+                            <span class="skill-tag skill-tag-business">Market Research</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-journey">
+                <div class="journey-line"></div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">
+                        <span>Jan 2025 - Present</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h3>Marketing & Content Lead</h3>
+                            <h4>SonarAudiobooks, CMKL University</h4>
+                            <p>Developed website with blog/newsletter integration, managed social media marketing, and designed strategies to grow user base and enhance engagement.</p>
+                            <div class="key-skills">
+                                <span>Content Strategy</span>
+                                <span>Digital Marketing</span>
+                                <span>Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">
+                        <span>Apr 2024 - Present</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h3>Business Strategy Consultant</h3>
+                            <h4>CMKL University</h4>
+                            <p>Conducted market research for AI projects, developed monetization strategies, and provided insights into digital marketing trends and consumer behavior.</p>
+                            <div class="key-skills">
+                                <span>Market Analysis</span>
+                                <span>Monetization</span>
+                                <span>Business Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">
+                        <span>Aug 2023 - Jan 2024</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h3>Event Coordinator</h3>
+                            <h4>CMKL University</h4>
+                            <p>Created innovative event concepts and executed marketing strategies to increase participation through promotional campaigns and digital marketing.</p>
+                            <div class="key-skills">
+                                <span>Event Planning</span>
+                                <span>Campaign Management</span>
+                                <span>Promotion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Lat Krabang, Bangkok, Thailand</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>kelvinwai.khantphyo@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+66920910228</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Khant Phyo Wai</h3>
+                    <p>Business Strategist & AI Engineer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/DolphinsAreWeird" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/khant-phyo-wai-065b411a4/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100025576650913" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/khant_p_wai/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Khant Phyo Wai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/scripts.js"></script>
 </body>
 </html>
