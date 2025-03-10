@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const typedTextElement = document.getElementById('typed-text');
     const skillBars = document.querySelectorAll('.skill-progress');
     const statNumbers = document.querySelectorAll('.stat-number');
+    const languageToggle = document.querySelector('.language-toggle');
     
     // ===== Mobile Menu =====
     if (menuToggle && navMenu) {
@@ -42,6 +43,97 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // ===== Language Toggle =====
+    if (languageToggle) {
+        const dropdownTrigger = languageToggle.querySelector('.dropdown');
+        const langOptions = languageToggle.querySelectorAll('.dropdown-content a');
+        
+        // Click handler to toggle dropdown
+        dropdownTrigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageToggle.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking elsewhere
+        document.addEventListener('click', function(e) {
+            if (!languageToggle.contains(e.target)) {
+                languageToggle.classList.remove('active');
+            }
+        });
+        
+        // Handle language selection
+        langOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const lang = this.getAttribute('data-lang');
+                
+                // Update display
+                const currentLangEl = languageToggle.querySelector('.current-lang');
+                if (currentLangEl) {
+                    currentLangEl.textContent = lang.toUpperCase();
+                }
+                
+                // Save preference
+                localStorage.setItem('preferredLanguage', lang);
+                
+                // Apply translations
+                applyTranslations(lang);
+                
+                // Show notification
+                showLanguageNotification(lang);
+                
+                // Close dropdown
+                languageToggle.classList.remove('active');
+            });
+        });
+        
+        // Initialize with saved preference
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        const currentLangEl = languageToggle.querySelector('.current-lang');
+        if (currentLangEl) {
+            currentLangEl.textContent = savedLang.toUpperCase();
+        }
+        
+        // Apply saved language on page load
+        if (savedLang !== 'en') {
+            applyTranslations(savedLang);
+        }
+    }
+    
+    // ===== Project Hover Details =====
+    const isTouchDevice = 'ontouchstart' in window || 
+                         navigator.maxTouchPoints > 0 || 
+                         navigator.msMaxTouchPoints > 0;
+    
+    projectCards.forEach(card => {
+        // Enable hover effects after a short delay
+        setTimeout(() => {
+            card.classList.add('hover-enabled');
+        }, 300);
+        
+        // For touch devices, use click instead of hover
+        if (isTouchDevice) {
+            card.addEventListener('click', function(e) {
+                // Don't trigger if clicking on a link
+                if (e.target.closest('a')) return;
+                
+                // Toggle details visibility
+                this.classList.toggle('details-visible');
+            });
+            
+            // Add back button functionality
+            const backButton = card.querySelector('.back-to-project');
+            if (backButton) {
+                backButton.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent card click event
+                    card.classList.remove('details-visible');
+                });
+            }
+        }
+    });
     
     // ===== Create Background Particles =====
     function createParticles() {
@@ -231,6 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "Business Strategist",
             "AI Engineer", 
             "Certified Jack of All Trades",
+            "Educator"
         ];
         
         let roleIndex = 0;
@@ -458,6 +551,121 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // ===== Translation System =====
+    function applyTranslations(lang) {
+        const translations = {
+            'en': {
+                'nav.home': 'Home',
+                'nav.about': 'About',
+                'nav.expertise': 'Expertise',
+                'nav.projects': 'Projects',
+                'nav.certificates': 'Certificates',
+                'nav.experience': 'Experience',
+                'nav.contact': 'Contact',
+                'hero.name': 'Khant Phyo Wai',
+                'hero.tagline': 'Bringing innovative solutions at the intersection of technology, business, and creative design',
+                'hero.projects': 'View Projects',
+                'hero.contact': 'Contact Me',
+                'about.title': 'About Me',
+                'expertise.title': 'My Expertise',
+                'projects.title': 'Featured Projects',
+                'certificates.title': 'Certificates & Achievements',
+                'experience.title': 'Work Experience',
+                'contact.title': 'Get In Touch',
+                'contact.form.submit': 'Send Message'
+                // Add more as needed
+            },
+            'my': {
+                'nav.home': 'ပင်မစာမျက်နှာ',
+                'nav.about': 'ကျွန်ုပ်အကြောင်း',
+                'nav.expertise': 'ကျွမ်းကျင်မှု',
+                'nav.projects': 'စီမံကိန်းများ',
+                'nav.certificates': 'အောင်လက်မှတ်များ',
+                'nav.experience': 'အတွေ့အကြုံ',
+                'nav.contact': 'ဆက်သွယ်ရန်',
+                'hero.name': 'ခန့်ဖြိုးဝေ',
+                'hero.tagline': 'နည်းပညာ၊ စီးပွားရေးနှင့် ဖန်တီးမှုဒီဇိုင်းတို့၏ ပေါင်းစည်းမှုမှ ဆန်းသစ်သောဖြေရှင်းချက်များကိုဖန်တီးပေးခြင်း',
+                'hero.projects': 'စီမံကိန်းများကြည့်ရန်',
+                'hero.contact': 'ဆက်သွယ်ရန်',
+                'about.title': 'ကျွန်ုပ်အကြောင်း',
+                'expertise.title': 'ကျွမ်းကျင်မှုများ',
+                'projects.title': 'အဓိကစီမံကိန်းများ',
+                'certificates.title': 'အောင်လက်မှတ်များနှင့် အောင်မြင်မှုများ',
+                'experience.title': 'လုပ်ငန်းအတွေ့အကြုံ',
+                'contact.title': 'ဆက်သွယ်ပါ',
+                'contact.form.submit': 'မက်ဆေ့ချ်ပို့ရန်'
+                // Add more as needed
+            },
+            'th': {
+                'nav.home': 'หน้าแรก',
+                'nav.about': 'เกี่ยวกับ',
+                'nav.expertise': 'ความเชี่ยวชาญ',
+                'nav.projects': 'โปรเจกต์',
+                'nav.certificates': 'ประกาศนียบัตร',
+                'nav.experience': 'ประสบการณ์',
+                'nav.contact': 'ติดต่อ',
+                'hero.name': 'คันท์ พโย ไว',
+                'hero.tagline': 'นำเสนอโซลูชั่นนวัตกรรมที่จุดตัดของเทคโนโลยี ธุรกิจ และการออกแบบเชิงสร้างสรรค์',
+                'hero.projects': 'ดูโปรเจกต์',
+                'hero.contact': 'ติดต่อฉัน',
+                'about.title': 'เกี่ยวกับฉัน',
+                'expertise.title': 'ความเชี่ยวชาญของฉัน',
+                'projects.title': 'โปรเจกต์เด่น',
+                'certificates.title': 'ประกาศนียบัตรและความสำเร็จ',
+                'experience.title': 'ประสบการณ์การทำงาน',
+                'contact.title': 'ติดต่อ',
+                'contact.form.submit': 'ส่งข้อความ'
+                // Add more as needed
+            }
+        };
+        
+        // Get translation set for the selected language (or fall back to English)
+        const translationSet = translations[lang] || translations['en'];
+        
+        // Apply translations to all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translationSet[key]) {
+                element.textContent = translationSet[key];
+            }
+        });
+        
+        // Apply translations to all elements with data-i18n-placeholder attribute (for form inputs)
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-i18n-placeholder');
+            if (translationSet[key]) {
+                element.setAttribute('placeholder', translationSet[key]);
+            }
+        });
+    }
+    
+    // Language notification helper
+    function showLanguageNotification(lang) {
+        const langNames = {
+            'en': 'English',
+            'my': 'Burmese',
+            'th': 'Thai'
+        };
+        
+        // Remove any existing notifications
+        const existingNotifications = document.querySelectorAll('.language-notification');
+        existingNotifications.forEach(notification => notification.remove());
+        
+        // Create notification
+        const notification = document.createElement('div');
+        notification.className = 'language-notification';
+        notification.textContent = `Language changed to ${langNames[lang] || lang}`;
+        document.body.appendChild(notification);
+        
+        // Remove after delay
+        setTimeout(() => {
+            notification.classList.add('fade-out');
+            setTimeout(() => {
+                notification.remove();
+            }, 500);
+        }, 2500);
+    }
     
     // Trigger initial animations
     setTimeout(function() {
