@@ -31,12 +31,24 @@
                 <div class="bar"></div>
             </div>
             <ul class="nav-menu">
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero" class="active" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#certificates" data-i18n="nav.certificates">Certificates</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <!-- Language Toggle -->
+                <li class="language-toggle">
+                    <div class="dropdown">
+                        <span class="current-lang">EN</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="my">Burmese</a>
+                            <a href="#" data-lang="th">Thai</a>
+                        </div>
+                    </div>
+                </li>
                 <li class="theme-switch">
                     <i class="fas fa-moon"></i>
                 </li>
@@ -46,14 +58,14 @@
 
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1 class="animate">Khant Phyo Wai</h1>
+            <h1 class="animate" data-i18n="hero.name">Khant Phyo Wai</h1>
             <div class="typewriter">
                 <span id="typed-text"></span><span class="cursor">|</span>
             </div>
-            <p class="animate">Bringing innovative solutions at the intersection of technology, business, and creative design</p>
+            <p class="animate" data-i18n="hero.tagline">Bringing innovative solutions at the intersection of technology, business, and creative design</p>
             <div class="hero-buttons animate">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <a href="#projects" class="btn btn-primary" data-i18n="hero.projects">View Projects</a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="hero.contact">Contact Me</a>
             </div>
         </div>
         <div class="hero-background"></div>
@@ -61,11 +73,11 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am a passionate business strategist and AI engineer with experience in market research, financial analysis, copywriting, and game development. With a strong foundation in AI and Computer Engineering from CMKL University, I specialize in creating meaningful solutions that bridge technical capabilities with business objectives.</p>
-                    <p>My journey began at Yangon Technological University, but when disrupted by circumstances, I persevered and earned a scholarship at CMKL University. Now I work on projects spanning AI, business strategy, and interactive technologies.</p>
+                    <p data-i18n="about.paragraph1">I am a passionate business strategist and AI engineer with experience in market research, financial analysis, copywriting, and game development. With a strong foundation in AI and Computer Engineering from CMKL University, I specialize in creating meaningful solutions that bridge technical capabilities with business objectives.</p>
+                    <p data-i18n="about.paragraph2">My journey began at Yangon Technological University, but when disrupted by circumstances, I persevered and earned a scholarship at CMKL University. Now I work on projects spanning AI, business strategy, and interactive technologies.</p>
                     
                     <div class="tech-stack-grid">
                         <div class="tech-logo" title="Python">
@@ -108,20 +120,24 @@
                             <i class="fab fa-git-alt"></i>
                             <span>Git</span>
                         </div>
-                        <div class="tech-logo" title="Cloud">
-                            <i class="fas fa-cloud"></i>
-                            <span>Cloud</span>
+                        <div class="tech-logo" title="MongoDB">
+                            <i class="fas fa-server"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-logo" title="YOLOv8">
+                            <i class="fas fa-eye"></i>
+                            <span>YOLOv8</span>
                         </div>
                     </div>
                     
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <span class="stat-number" data-count="8">0</span>
-                            <span class="stat-label">Completed Projects</span>
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Fully-Funded Scholarships</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" data-count="4">0</span>
-                            <span class="stat-label">Ongoing Projects</span>
+                            <span class="stat-number" data-count="12">0</span>
+                            <span class="stat-label">Total Projects</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number" data-count="3.7">0</span>
@@ -146,7 +162,7 @@
 
     <section id="expertise" class="expertise">
         <div class="container">
-            <h2 class="section-title">My Expertise</h2>
+            <h2 class="section-title" data-i18n="expertise.title">My Expertise</h2>
             
             <div class="expertise-categories">
                 <div class="expertise-category">
@@ -154,8 +170,8 @@
                         <div class="expertise-icon">
                             <i class="fas fa-microchip"></i>
                         </div>
-                        <h3>AI & Data Science</h3>
-                        <p class="expertise-summary">Leveraging advanced algorithms and data analysis to create intelligent solutions for complex problems.</p>
+                        <h3 data-i18n="expertise.ai.title">AI & Data Science</h3>
+                        <p class="expertise-summary" data-i18n="expertise.ai.summary">Leveraging advanced algorithms and data analysis to create intelligent solutions for complex problems.</p>
                     </div>
                     <div class="expertise-skills">
                         <div class="skill-item">
@@ -202,8 +218,8 @@
                         <div class="expertise-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3>Business Strategy</h3>
-                        <p class="expertise-summary">Developing comprehensive business plans and market analyses to drive sustainable growth and innovation.</p>
+                        <h3 data-i18n="expertise.business.title">Business Strategy</h3>
+                        <p class="expertise-summary" data-i18n="expertise.business.summary">Developing comprehensive business plans and market analyses to drive sustainable growth and innovation.</p>
                     </div>
                     <div class="expertise-skills">
                         <div class="skill-item">
@@ -250,8 +266,8 @@
                         <div class="expertise-icon">
                             <i class="fas fa-pencil-alt"></i>
                         </div>
-                        <h3>Creative & Design</h3>
-                        <p class="expertise-summary">Creating engaging content and immersive user experiences through thoughtful design and compelling storytelling.</p>
+                        <h3 data-i18n="expertise.creative.title">Creative & Design</h3>
+                        <p class="expertise-summary" data-i18n="expertise.creative.summary">Creating engaging content and immersive user experiences through thoughtful design and compelling storytelling.</p>
                     </div>
                     <div class="expertise-skills">
                         <div class="skill-item">
@@ -292,13 +308,71 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- New Education & Teaching Expertise Section -->
+                <div class="expertise-category">
+                    <div class="expertise-header">
+                        <div class="expertise-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 data-i18n="expertise.education.title">Education & Teaching</h3>
+                        <p class="expertise-summary" data-i18n="expertise.education.summary">Developing student potential through personalized instruction and curriculum development in various subjects and educational systems.</p>
+                    </div>
+                    <div class="expertise-skills">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Mathematics</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">English Language</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Science</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Myanmar Matriculation</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">GED Preparation</span>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
             
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
@@ -306,13 +380,12 @@
                 <button class="filter-btn" data-filter="cv">Computer Vision</button>
                 <button class="filter-btn" data-filter="nlp">NLP</button>
                 <button class="filter-btn" data-filter="business">Business</button>
-                <button class="filter-btn" data-filter="business">Marketing</button>
                 <button class="filter-btn" data-filter="design">Design</button>
-                <button class="filter-btn" data-filter="design">Web Development</button>
                 <button class="filter-btn" data-filter="digital-twin">3D modeling</button>
             </div>
             
             <div class="project-grid">
+                <!-- SonarAudiobooks Project -->
                 <div class="project-card" data-category="ai business cv">
                     <div class="project-img">
                         <img src="images/Sonar.webp" alt="SonarAudiobooks">
@@ -331,15 +404,55 @@
                             <span class="skill-tag skill-tag-data">OCR</span>
                             <span class="skill-tag skill-tag-business">Web Development</span>
                             <span class="skill-tag skill-tag-business">Marketing</span>
-                            <span class="skill-tag skill-tag-business">Market Research</span>
                         </div>
                         <a href="https://sonaraudiobooks.com/" target="_blank" class="project-link">
                             <span>View Project</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
+                    
+                    <!-- Hover details overlay -->
+                    <div class="project-hover-details">
+                        <button class="back-to-project">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="hover-details-header">
+                            <h3>SonarAudiobooks</h3>
+                            <p>A tool transforming physical books into audiobooks for the visually impaired using AI and computer vision.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-bullseye"></i> Objective</h4>
+                            <p>Creating an accessible solution for visually impaired individuals to consume written content independently and efficiently.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-cogs"></i> Technical Approach</h4>
+                            <p>Implemented YOLOv8 for book detection, custom OCR pipeline with post-processing, and natural language processing for text-to-speech optimization.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-chart-line"></i> Business Development</h4>
+                            <p>Conducted market research targeting educational institutions and accessibility organizations. Developed sustainable business model with tiered subscription options.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-tasks"></i> Project Management</h4>
+                            <p>Led cross-functional team of 5 using Agile methodology. Managed budget allocation, timeline development, and stakeholder relations.</p>
+                        </div>
+                        
+                        <div class="hover-tech-stack">
+                            <span class="hover-tech-item">TensorFlow</span>
+                            <span class="hover-tech-item">PyTorch</span>
+                            <span class="hover-tech-item">Flask</span>
+                            <span class="hover-tech-item">ReactJS</span>
+                            <span class="hover-tech-item">MongoDB</span>
+                        </div>
+                    </div>
                 </div>
                 
+                <!-- Harmony Vision Project -->
                 <div class="project-card" data-category="design ai">
                     <div class="project-img">
                         <img src="images/harmony.webp" alt="Harmony Vision">
@@ -350,6 +463,7 @@
                             <span class="tag">AR</span>
                             <span class="tag">Game Dev</span>
                             <span class="tag">UX Design</span>
+                            <span class="tag">AI</span>
                         </div>
                         <h3>Harmony Vision</h3>
                         <p>An AR guitar training application allowing users to learn interactively through AR glasses with innovative UI.</p>
@@ -363,9 +477,50 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
+                    
+                    <!-- Hover details overlay -->
+                    <div class="project-hover-details">
+                        <button class="back-to-project">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="hover-details-header">
+                            <h3>Harmony Vision</h3>
+                            <p>An AR guitar training application allowing users to learn interactively through AR glasses with innovative UI.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-bullseye"></i> Objective</h4>
+                            <p>Creating an immersive AR experience to make learning guitar more engaging, intuitive, and accessible for beginners and intermediate players.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-cogs"></i> Technical Approach</h4>
+                            <p>Developed computer vision algorithms to track finger and hand positions in real-time. Created AI-powered chord recognition and feedback systems using deep learning.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-chart-line"></i> Business Development</h4>
+                            <p>Conducted user experience research with 50+ musicians to identify pain points in learning. Created business plan with freemium model and strategic partnerships with music schools.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-tasks"></i> Project Management</h4>
+                            <p>Managed development roadmap using iterative design process with regular user feedback cycles. Coordinated UX designers, AR developers, and musicians throughout development.</p>
+                        </div>
+                        
+                        <div class="hover-tech-stack">
+                            <span class="hover-tech-item">Unity3D</span>
+                            <span class="hover-tech-item">ARKit</span>
+                            <span class="hover-tech-item">TensorFlow</span>
+                            <span class="hover-tech-item">C#</span>
+                            <span class="hover-tech-item">Python</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="project-card" data-category="business data">
+                <!-- Thai Neighbourhood Project -->
+                <div class="project-card" data-category="business data ai">
                     <div class="project-img">
                         <img src="images/404.webp" alt="My Happy Thai Neighbourhood">
                         <div class="project-overlay"></div>
@@ -374,6 +529,7 @@
                         <div class="project-tags">
                             <span class="tag">Business Strategy</span>
                             <span class="tag">Project Management</span>
+                            <span class="tag">AI</span>
                         </div>
                         <h3>Thai Neighbourhood</h3>
                         <p>Led business strategy and financial modeling for this community-focused initiative under CMKL University's R&D program.</p>
@@ -387,8 +543,49 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
+                    
+                    <!-- Hover details overlay -->
+                    <div class="project-hover-details">
+                        <button class="back-to-project">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="hover-details-header">
+                            <h3>Thai Neighbourhood</h3>
+                            <p>Led business strategy and financial modeling for this community-focused initiative under CMKL University's R&D program.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-bullseye"></i> Objective</h4>
+                            <p>Developing sustainable economic growth models for Thai local communities while preserving cultural heritage and promoting technological integration.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-cogs"></i> Technical Approach</h4>
+                            <p>Implemented AI-based analysis of community needs and resource allocation. Created predictive models for economic impact assessment using machine learning.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-chart-line"></i> Business Development</h4>
+                            <p>Created comprehensive financial models and funding strategies. Established partnerships with local businesses, government agencies, and educational institutions.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-tasks"></i> Project Management</h4>
+                            <p>Coordinated cross-cultural team of researchers, community leaders, and business strategists. Implemented milestone-based progress tracking and impact assessment frameworks.</p>
+                        </div>
+                        
+                        <div class="hover-tech-stack">
+                            <span class="hover-tech-item">Data Analytics</span>
+                            <span class="hover-tech-item">Python</span>
+                            <span class="hover-tech-item">Tableau</span>
+                            <span class="hover-tech-item">Financial Modeling</span>
+                            <span class="hover-tech-item">GIS</span>
+                        </div>
+                    </div>
                 </div>
                 
+                <!-- AI-Levator Project -->
                 <div class="project-card" data-category="ai data business digital-twin">
                     <div class="project-img">
                         <img src="images/elevator.png" alt="AI-Levator">
@@ -412,9 +609,50 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
+                    
+                    <!-- Hover details overlay -->
+                    <div class="project-hover-details">
+                        <button class="back-to-project">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="hover-details-header">
+                            <h3>AI-Levator</h3>
+                            <p>An AI-powered elevator system that adapts to real-time conditions, reducing wait times by predicting peak usage and adjusting elevator dispatch dynamically.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-bullseye"></i> Objective</h4>
+                            <p>Optimizing elevator systems in high-rise buildings to reduce wait times, energy consumption, and operational costs through AI-powered predictive modeling.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-cogs"></i> Technical Approach</h4>
+                            <p>Developed reinforcement learning algorithms to optimize dispatching based on historical and real-time usage patterns. Created digital twin simulation environment for testing.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-chart-line"></i> Business Development</h4>
+                            <p>Created ROI models demonstrating 30% energy savings and 40% reduction in wait times. Developed B2B SaaS pricing model with implementation and maintenance services.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-tasks"></i> Project Management</h4>
+                            <p>Led development from concept to prototype, coordinating with building management systems specialists and elevator engineers to ensure practical implementation.</p>
+                        </div>
+                        
+                        <div class="hover-tech-stack">
+                            <span class="hover-tech-item">TensorFlow</span>
+                            <span class="hover-tech-item">Python</span>
+                            <span class="hover-tech-item">Unity3D</span>
+                            <span class="hover-tech-item">IoT Sensors</span>
+                            <span class="hover-tech-item">AWS</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="project-card" data-category="nlp ai">
+                <!-- Fallacy Hunter Project -->
+                <div class="project-card" data-category="nlp ai business">
                     <div class="project-img">
                         <img src="images/fallacy.png" alt="Fallacy Hunter">
                         <div class="project-overlay"></div>
@@ -437,6 +675,121 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
+                    
+                    <!-- Hover details overlay -->
+                    <div class="project-hover-details">
+                        <button class="back-to-project">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="hover-details-header">
+                            <h3>Fallacy Hunter</h3>
+                            <p>An NLP-based tool that identifies logical fallacies in text-based arguments, helping improve critical thinking and argumentation skills.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-bullseye"></i> Objective</h4>
+                            <p>Developing an AI tool to enhance critical thinking by automatically detecting and explaining logical fallacies in argumentative text, supporting educational and professional contexts.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-cogs"></i> Technical Approach</h4>
+                            <p>Created custom NLP models to identify 15+ common logical fallacies using transformer architecture. Implemented explanatory system to provide educational feedback on detected fallacies.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-chart-line"></i> Business Development</h4>
+                            <p>Conducted market research with educational institutions and debate organizations. Developed tiered pricing model with special focus on integration with learning management systems.</p>
+                        </div>
+                        
+                        <div class="hover-section">
+                            <h4><i class="fas fa-tasks"></i> Project Management</h4>
+                            <p>Managed collaboration between linguistics experts, NLP specialists, and education consultants. Created agile development roadmap with continuous integration of user feedback.</p>
+                        </div>
+                        
+                        <div class="hover-tech-stack">
+                            <span class="hover-tech-item">BERT</span>
+                            <span class="hover-tech-item">PyTorch</span>
+                            <span class="hover-tech-item">HuggingFace</span>
+                            <span class="hover-tech-item">Flask</span>
+                            <span class="hover-tech-item">React</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Certificates Section -->
+    <!-- Updated Certificates Section with Matriculation Exam -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title" data-i18n="certificates.title">Certificates & Achievements</h2>
+            
+            <div class="certificates-grid">
+                <!-- Matriculation Exam Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Myanmar Matriculation Examination</h3>
+                        <h4>Myanmar Education Board</h4>
+                        <p>Achieved 5 distinctions out of 6 subjects with an outstanding score of 520/600, placing in the top percentile of nationwide examination results.</p>
+                        <div class="certificate-date">2018</div>
+                    </div>
+                </div>
+                
+                <!-- Social Media Marketing Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Introduction to Social Media Marketing</h3>
+                        <h4>Meta</h4>
+                        <p>Mastered fundamentals of social media strategy, content planning, and campaign analytics to drive audience engagement and business growth.</p>
+                        <div class="certificate-date">2023</div>
+                    </div>
+                </div>
+                
+                <!-- Character Design Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Character Design for Video Games</h3>
+                        <h4>California Institute of the Arts (CalArts)</h4>
+                        <p>Developed skills in creating compelling character designs with strong visual appeal and narrative integration for interactive experiences.</p>
+                        <div class="certificate-date">2023</div>
+                    </div>
+                </div>
+                
+                <!-- Graphic Design Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Graphic Design</h3>
+                        <h4>University of Colorado Boulder</h4>
+                        <p>Learned principles of visual communication, typography, color theory, and layout design for creating effective marketing materials.</p>
+                        <div class="certificate-date">2022</div>
+                    </div>
+                </div>
+                
+                <!-- Technical Support Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Technical Support Fundamentals</h3>
+                        <h4>Google</h4>
+                        <p>Gained expertise in troubleshooting, system administration, and technical problem-solving to support digital platforms and users.</p>
+                        <div class="certificate-date">2022</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -444,7 +797,7 @@
 
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Work Experience</h2>
+            <h2 class="section-title" data-i18n="experience.title">Work Experience</h2>
             
             <div class="experience-journey">
                 <div class="journey-line"></div>
@@ -491,6 +844,29 @@
                     </div>
                 </div>
                 
+                <!-- New Teaching Experience -->
+                <div class="experience-item">
+                    <div class="experience-date">
+                        <span>Dec 2021 - Dec 2023</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h3>Assistant Teacher</h3>
+                            <h4>Teacher Su International School</h4>
+                            <p>Developed and delivered curriculum for Mathematics, English, and Science courses. Prepared students for Myanmar Matriculation and GED examinations while providing personalized instruction to improve learning outcomes.</p>
+                            <div class="key-skills">
+                                <span>Curriculum Development</span>
+                                <span>Student Assessment</span>
+                                <span>Personalized Instruction</span>
+                                <span>Educational Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="experience-item">
                     <div class="experience-date">
                         <span>Aug 2023 - Jan 2024</span>
@@ -511,13 +887,36 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Adding the Marketing & Copywriting Intern experience from resume -->
+                <div class="experience-item">
+                    <div class="experience-date">
+                        <span>July 2023 - Dec 2023</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h3>Marketing & Copywriting Intern</h3>
+                            <h4>Connected Pathways Hub Myanmar</h4>
+                            <p>Developed engaging content for digital platforms, assisted in crafting marketing copy and promotional materials, and conducted research on digital marketing trends to optimize outreach strategies.</p>
+                            <div class="key-skills">
+                                <span>Content Creation</span>
+                                <span>Digital Marketing</span>
+                                <span>Market Research</span>
+                                <span>Campaign Ideation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -525,8 +924,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h3>Location</h3>
-                            <p>Lat Krabang, Bangkok, Thailand</p>
+                            <h3 data-i18n="contact.location.title">Location</h3>
+                            <p data-i18n="contact.location.value">Lat Krabang, Bangkok, Thailand</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -534,7 +933,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <h3>Email</h3>
+                            <h3 data-i18n="contact.email.title">Email</h3>
                             <p>kelvinwai.khantphyo@gmail.com</p>
                         </div>
                     </div>
@@ -543,25 +942,25 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div>
-                            <h3>Phone</h3>
+                            <h3 data-i18n="contact.phone.title">Phone</h3>
                             <p>+66920910228</p>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Your Name" required data-i18n-placeholder="contact.form.name">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" placeholder="Your Email" required data-i18n-placeholder="contact.form.email">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject">
+                        <input type="text" placeholder="Subject" data-i18n-placeholder="contact.form.subject">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea placeholder="Your Message" required data-i18n-placeholder="contact.form.message"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -575,11 +974,12 @@
                     <p>Business Strategist & AI Engineer</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#hero">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#expertise">Expertise</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#hero" data-i18n="nav.home">Home</a>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+                    <a href="#projects" data-i18n="nav.projects">Projects</a>
+                    <a href="#certificates" data-i18n="nav.certificates">Certificates</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/DolphinsAreWeird" target="_blank"><i class="fab fa-github"></i></a>
