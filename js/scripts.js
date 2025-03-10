@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const roles = [
             "Business Strategist",
             "AI Engineer", 
-            "I am terrible at Games😭",
+            "Certified Jack of All Trades",
         ];
         
         let roleIndex = 0;
