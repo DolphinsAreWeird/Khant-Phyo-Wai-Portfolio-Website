@@ -1611,6 +1611,424 @@ p {
         gap: 1rem;
     }
 }
+/* CSS CHANGES GUIDE */
+
+/* 1. LANGUAGE TOGGLE STYLES - Add these */
+.language-toggle {
+    margin-left: 1.8rem;
+    position: relative;
+}
+
+.language-toggle .dropdown {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    background-color: var(--bg);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-toggle .dropdown:hover {
+    background-color: rgba(44, 122, 123, 0.1);
+    transform: translateY(-2px);
+}
+
+.current-lang {
+    position: relative;
+    padding-right: 12px;
+}
+
+.current-lang::after {
+    content: '▼';
+    font-size: 8px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--bg);
+    min-width: 120px;
+    box-shadow: var(--hover-shadow);
+    border-radius: var(--border-radius);
+    z-index: 100;
+    overflow: hidden;
+    margin-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.language-toggle.active .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content a {
+    padding: 0.7rem 1rem;
+    display: block;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(44, 122, 123, 0.1);
+}
+
+/* 2. PROJECT HOVER DETAILS - Add these */
+.project-hover-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg);
+    padding: 1.5rem;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card.hover-enabled:hover .project-hover-details {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s; /* 500ms hover delay */
+}
+
+.project-card:not(:hover) .project-hover-details {
+    transition-delay: 0s;
+}
+
+.hover-details-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.hover-details-header h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.hover-section {
+    margin-bottom: 1rem;
+}
+
+.hover-section h4 {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.hover-section h4 i {
+    margin-right: 0.5rem;
+}
+
+.hover-section p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 0;
+}
+
+.hover-tech-stack {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.hover-tech-item {
+    padding: 0.3rem 0.7rem;
+    background-color: rgba(44, 122, 123, 0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.back-to-project {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 6;
+}
+
+/* 3. CERTIFICATES SECTION - Add these */
+.certificates {
+    background-color: var(--bg);
+    position: relative;
+    padding: 5rem 0;
+}
+
+.certificates::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 30 30 55 5 30z' fill='%232c7a7b' fill-opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.certificate-card {
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+.certificate-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, rgba(44, 122, 123, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+}
+
+.certificate-content {
+    flex: 1;
+}
+
+.certificate-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.certificate-content h4 {
+    color: var(--primary);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.certificate-content p {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-bottom: 0.8rem;
+}
+
+.certificate-date {
+    font-size: 0.8rem;
+    color: var(--light-text);
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background-color: rgba(44, 122, 123, 0.1);
+    border-radius: 50px;
+}
+
+/* 4. LANGUAGE NOTIFICATION - Add these */
+.language-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease;
+}
+
+.language-notification.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* 5. DARK MODE ADJUSTMENTS - Add these */
+.dark-mode .project-hover-details {
+    background-color: var(--dark);
+}
+
+.dark-mode .hover-details-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .hover-tech-stack {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .hover-section p {
+    color: var(--light-text);
+}
+
+.dark-mode .dropdown-content {
+    background-color: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .certificate-card {
+    background-color: var(--dark);
+}
+
+/* 6. MOBILE/TOUCH DEVICE HANDLING - Add these */
+@media (max-width: 768px) {
+    .language-toggle {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .certificate-card {
+        flex-direction: column;
+    }
+    
+    .certificate-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .project-card.hover-enabled:hover .project-hover-details {
+        transition-delay: 0s;
+    }
+    
+    .back-to-project {
+        display: flex;
+    }
+    
+    .project-card.details-visible .project-hover-details {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+/* Dark Mode Fixes */
+
+/* 1. Language Dropdown Text Fix */
+.dark-mode .dropdown-content {
+    background-color: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .dropdown-content a {
+    color: var(--light); /* Brighter text color for better visibility */
+}
+
+.dark-mode .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* 2. Certificate Cards Fix */
+.dark-mode .certificate-card {
+    background-color: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .certificate-content h3 {
+    color: var(--light); /* Brighter color for better visibility */
+}
+
+.dark-mode .certificate-content h4 {
+    color: var(--primary); /* Keep primary color for contrast */
+}
+
+.dark-mode .certificate-content p {
+    color: var(--light-text);
+    opacity: 0.9; /* Slightly more opaque for better visibility */
+}
+
+.dark-mode .certificate-date {
+    color: var(--light);
+    background-color: rgba(44, 122, 123, 0.2); /* Darker but still visible background */
+}
+
+/* 3. Project Hover Details Fix */
+.dark-mode .project-hover-details {
+    background-color: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .hover-details-header h3 {
+    color: var(--light);
+}
+
+.dark-mode .hover-details-header p,
+.dark-mode .hover-section p {
+    color: var(--light-text);
+    opacity: 0.9;
+}
+
+.dark-mode .hover-section h4 {
+    color: var(--primary);
+}
+
+.dark-mode .hover-tech-item {
+    background-color: rgba(44, 122, 123, 0.2);
+    color: var(--light);
+}
+
+/* Additional fixes for other dark mode elements */
+.dark-mode .language-toggle .dropdown {
+    background-color: rgba(44, 122, 123, 0.1);
+}
+
+.dark-mode .language-toggle .dropdown:hover {
+    background-color: rgba(44, 122, 123, 0.2);
+}
+
+.dark-mode .current-lang {
+    color: var(--light);
+}
 
 @media (max-width: 576px) {
     .filter-btn {
