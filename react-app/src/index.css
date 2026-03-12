@@ -1,7 +1,8 @@
-/*
- * Khant Phyo Wai - Portfolio
- * Enhanced visuals with subtle background elements
- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ===== CSS VARIABLES ===== */
@@ -1979,13 +1980,13 @@ section::after {
 }
 
 /* Enhance dark mode for accent button */
-.dark-mode .btn-accent {
+html.dark .btn-accent {
     background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
     color: var(--dark);
     box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
 }
 
-.dark-mode .btn-accent:hover {
+html.dark .btn-accent:hover {
     box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
 }
 
@@ -2048,7 +2049,7 @@ section::after {
 }
 
 /* ===== DARK MODE STYLES ===== */
-.dark-mode {
+html.dark {
     --primary: #60a5fa;
     --secondary: #2dd4bf;
     --dark: #f1f5f9;
@@ -2065,121 +2066,121 @@ section::after {
 }
 
 /* Navbar in dark mode */
-.dark-mode .navbar {
+html.dark .navbar {
     background-color: rgba(10, 15, 30, 0.96);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-.dark-mode .navbar.scrolled {
+html.dark .navbar.scrolled {
     background-color: var(--bg);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.dark-mode .bar {
+html.dark .bar {
     background-color: var(--dark);
 }
 
 /* Dark mode text and sections */
-.dark-mode .section-title,
-.dark-mode h1, 
-.dark-mode h2, 
-.dark-mode h3, 
-.dark-mode h4, 
-.dark-mode h5, 
-.dark-mode h6 {
+html.dark .section-title,
+html.dark h1, 
+html.dark h2, 
+html.dark h3, 
+html.dark h4, 
+html.dark h5, 
+html.dark h6 {
     color: var(--dark);
 }
 
-.dark-mode p,
-.dark-mode .skill-name {
+html.dark p,
+html.dark .skill-name {
     color: var(--text);
 }
 
-.dark-mode .light-text,
-.dark-mode .skill-percentage,
-.dark-mode .project-card p,
-.dark-mode .experience-details p,
-.dark-mode .certificate-content p {
+html.dark .light-text,
+html.dark .skill-percentage,
+html.dark .project-card p,
+html.dark .experience-details p,
+html.dark .certificate-content p {
     color: var(--light-text);
 }
 
 /* Dark mode cards and backgrounds */
-.dark-mode .hero {
+html.dark .hero {
     background:
         radial-gradient(circle, rgba(96, 165, 250, 0.07) 1px, transparent 1px),
         linear-gradient(160deg, rgba(10, 15, 30, 0.95) 0%, rgba(29, 95, 163, 0.08) 50%, rgba(13, 148, 136, 0.06) 100%);
     background-size: 28px 28px, 100% 100%;
 }
 
-.dark-mode .project-card,
-.dark-mode .web-project-card,
-.dark-mode .expertise-category,
-.dark-mode .certificate-card,
-.dark-mode .contact-form,
-.dark-mode .tech-logo,
-.dark-mode .stat-item {
+html.dark .project-card,
+html.dark .web-project-card,
+html.dark .expertise-category,
+html.dark .certificate-card,
+html.dark .contact-form,
+html.dark .tech-logo,
+html.dark .stat-item {
     background-color: var(--bg);
     border-color: rgba(255, 255, 255, 0.05);
 }
 
-.dark-mode .experience-content {
+html.dark .experience-content {
     background-color: #111827;
     border-color: rgba(255, 255, 255, 0.07);
     border-left-color: var(--primary);
 }
 
-.dark-mode .project-hover-details,
-.dark-mode .form-group input,
-.dark-mode .form-group textarea {
+html.dark .project-hover-details,
+html.dark .form-group input,
+html.dark .form-group textarea {
     background-color: var(--light);
     color: var(--text);
 }
 
-.dark-mode .project-hover-details {
+html.dark .project-hover-details {
     background-color: var(--light);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.dark-mode .hover-details-header {
+html.dark .hover-details-header {
     border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .hover-tech-stack {
+html.dark .hover-tech-stack {
     border-top-color: rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .hover-section p {
+html.dark .hover-section p {
     color: var(--light-text);
 }
 
 /* Dark mode dropdown */
-.dark-mode .dropdown-content {
+html.dark .dropdown-content {
     background-color: var(--light);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .dropdown-content a {
+html.dark .dropdown-content a {
     color: var(--text);
 }
 
-.dark-mode .dropdown-content a:hover {
+html.dark .dropdown-content a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Dark mode footer */
-.dark-mode .footer {
+html.dark .footer {
     background-color: #070b13;
 }
 
 /* Dark mode button hover */
-.dark-mode .btn-secondary:hover {
+html.dark .btn-secondary:hover {
     background: var(--primary);
     color: var(--light);
 }
 
 /* Dark mode skill bar */
-.dark-mode .skill-bar {
+html.dark .skill-bar {
     background-color: rgba(255, 255, 255, 0.1);
 }
 

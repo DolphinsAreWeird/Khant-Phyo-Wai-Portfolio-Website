@@ -3,7 +3,7 @@
  * Consolidated version with improved animations and performance
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+function initPortfolio() {
     // ===== DOM Elements =====
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const webProjectCards = document.querySelectorAll('.web-project-card');
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
-    const typedTextElement = document.getElementById('typed-text');
     const skillBars = document.querySelectorAll('.skill-progress');
     const statNumbers = document.querySelectorAll('.stat-number');
     const languageToggle = document.querySelector('.language-toggle');
@@ -171,15 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Toggle details visibility
                 this.classList.toggle('details-visible');
             });
-            
-            // Add back button functionality
-            const backButton = card.querySelector('.back-to-project');
-            if (backButton) {
-                backButton.addEventListener('click', function(e) {
-                    e.stopPropagation(); // Prevent card click event
-                    card.classList.remove('details-visible');
-                });
-            }
+
         }
     });
     
@@ -643,56 +634,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ===== Typewriter Effect =====
-    function typeWriter() {
-        const roles = [
-            "Business Strategist",
-            "AI Engineer", 
-            "Web Developer",
-            "Educator",
-            "Certified Jack of All Trades"
-        ];
-        
-        if (!typedTextElement) return;
-        
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 100; // Base type speed
-        
-        function type() {
-            const currentRole = roles[roleIndex];
-            
-            if (isDeleting) {
-                // Deleting text
-                typedTextElement.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 50; // Faster when deleting
-            } else {
-                // Typing text
-                typedTextElement.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 100; // Normal speed when typing
-            }
-            
-            // Handle deleting and switching to next role
-            if (!isDeleting && charIndex === currentRole.length) {
-                // Pause at end of typing
-                typeSpeed = 1500;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                // Move to next role when deleted
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                typeSpeed = 500; // Pause before typing new role
-            }
-            
-            setTimeout(type, typeSpeed);
-        }
-        
-        // Start typing
-        setTimeout(type, 1000);
-    }
     
     // ===== Project Filtering =====
     if (filterButtons.length > 0 && projectCards.length > 0) {
@@ -1129,9 +1070,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Enhance image loading
         enhanceImageLoading();
         
-        // Start typewriter effect
-        typeWriter();
-        
         // Add scroll to top button
         addScrollToTopButton();
         
@@ -1187,4 +1125,11 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(createParticles, 300);
     });
-});
+}
+
+// Works whether the script is loaded before or after DOMContentLoaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolio);
+} else {
+    initPortfolio();
+}

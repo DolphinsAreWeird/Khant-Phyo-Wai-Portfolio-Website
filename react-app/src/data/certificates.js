@@ -1,0 +1,42 @@
+export const certificates = [
+  {
+    id: 1,
+    icon: 'fa-graduation-cap',
+    title: 'Myanmar Matriculation Examination',
+    issuer: 'Myanmar Education Board',
+    description: 'Achieved 5 distinctions out of 6 subjects with an outstanding score of 520/600, placing in the top percentile of nationwide examination results.',
+    year: '2018',
+  },
+  {
+    id: 2,
+    icon: 'fa-hashtag',
+    title: 'Introduction to Social Media Marketing',
+    issuer: 'Meta',
+    description: 'Mastered fundamentals of social media strategy, content planning, and campaign analytics to drive audience engagement and business growth.',
+    year: '2023',
+  },
+  {
+    id: 3,
+    icon: 'fa-gamepad',
+    title: 'Character Design for Video Games',
+    issuer: 'California Institute of the Arts (CalArts)',
+    description: 'Developed skills in creating compelling character designs with strong visual appeal and narrative integration for interactive experiences.',
+    year: '2023',
+  },
+  {
+    id: 4,
+    icon: 'fa-paint-brush',
+    title: 'Graphic Design',
+    issuer: 'University of Colorado Boulder',
+    description: 'Learned principles of visual communication, typography, color theory, and layout design for creating effective marketing materials.',
+    year: '2022',
+  },
+  {
+    id: 5,
+    icon: 'fa-laptop-code',
+    title: 'Technical Support Fundamentals',
+    issuer: 'Google',
+    description: 'Gained expertise in troubleshooting, system administration, and technical problem-solving to support digital platforms and users.',
+    year: '2022',
+  },
+];

@@ -1,0 +1,42 @@
+export const webProjects = [
+  {
+    id: 1,
+    title: 'ConnectEd PHM',
+    description: 'Educational platform with interactive learning resources and student management capabilities.',
+    image: '/images/web-connected.png',
+    link: 'https://dolphinsareweird.github.io/ConnectEd-PHM/',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    id: 2,
+    title: 'Simpal Clothing',
+    description: 'E-commerce website for a clothing brand with product catalog and shopping functionality.',
+    image: '/images/web-simpal.png',
+    link: 'https://simpalclothing.netlify.app/',
+    tech: ['React', 'CSS', 'Netlify'],
+  },
+  {
+    id: 3,
+    title: 'Sonar Audiobooks',
+    description: 'Platform for converting physical books to audiobooks using AI technology for visually impaired users.',
+    image: '/images/web-sonar.png',
+    link: 'https://sonaraudiobooks.com/',
+    tech: ['React', 'Node.js', 'AI Integration'],
+  },
+  {
+    id: 4,
+    title: 'Mega Portfolio',
+    description: 'Personal portfolio website showcasing creative work with smooth animations and clean design.',
+    image: '/images/web-portfolio.png',
+    link: 'https://meganing.github.io/MyPortfolio/',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    id: 5,
+    title: 'Lab 404',
+    description: 'Research lab website featuring project showcases, team profiles, and publication archives.',
+    image: '/images/web-lab404.png',
+    link: 'https://lab404.mystrikingly.com/',
+    tech: ['Strikingly', 'Custom CSS', 'Content Strategy'],
+  },
+];
