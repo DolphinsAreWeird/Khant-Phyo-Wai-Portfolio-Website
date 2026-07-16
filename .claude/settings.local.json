@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(command -v cwebp)",
+      "Bash(sips -g pixelWidth -g pixelHeight profile.jpg fallacy.png web-portfolio.png web-simpal.png web-connected.png web-sonar.png web-lab404.png elevator.png 404.webp Sonar.webp harmony.webp \"MHTN .webp\")",
+      "Bash(cp \"/Users/mac/Downloads/KP General Resume.pdf\" \"/Users/mac/Documents/GitHub/Khant-Phyo-Wai-Portfolio-Website/files/KPResume.pdf\" && ls -la /Users/mac/Documents/GitHub/Khant-Phyo-Wai-Portfolio-Website/files/)",
+      "Bash(git rm *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh auth *)",
+      "Bash(ssh -T git@github.com -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10)",
+      "Bash(sed -i '' '/kicker/ s/ — / · /g' index.html js/i18n.js)",
+      "Bash(sed -i '' '/date/ s/ — / – /g' index.html js/i18n.js)",
+      "Bash(/opt/anaconda3/bin/python3)",
+      "Bash(sed -i '' \"s/--font-serif: 'Fraunces', 'Noto Serif Thai', 'Noto Serif Myanmar', Georgia, serif;/--font-display: 'Bricolage Grotesque', 'Noto Sans Thai', 'Noto Sans Myanmar', 'Inter', sans-serif;/\" css/styles.css)",
+      "Bash(sed -i '' 's/var\\(--font-serif\\)/var\\(--font-display\\)/g' css/styles.css)"
+    ]
+  }
+}
