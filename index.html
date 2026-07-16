@@ -4,36 +4,871 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khant Phyo Wai | Co-Founder & AI Engineer</title>
-    <meta name="description" content="Portfolio of Khant Phyo Wai - Co-Founder & CFO at Sonar AI, AI Engineer at CMKL University. Specialising in AI systems, business strategy, and data-driven solutions.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Portfolio of Khant Phyo Wai — Co-Founder & CFO at Sonar AI and AI Engineer at CMKL University. AI systems, business strategy, and data-driven products.">
+    <link rel="canonical" href="https://khantphyowai.vercel.app/">
+    <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#191512" media="(prefers-color-scheme: dark)">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://khantphyowai.vercel.app/">
+    <meta property="og:title" content="Khant Phyo Wai | Co-Founder & AI Engineer">
+    <meta property="og:description" content="AI systems, business strategy, and data-driven products — Co-Founder & CFO at Sonar AI, AI Engineer at CMKL University.">
+    <meta property="og:image" content="https://khantphyowai.vercel.app/images/profile.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Apply saved theme before first paint (prevents flash) -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark-mode');
+                }
+                var l = localStorage.getItem('preferredLanguage');
+                if (l) document.documentElement.lang = l;
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=Noto+Sans+Myanmar:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Myanmar:wght@600;700&family=Noto+Serif+Thai:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome, loaded without blocking render -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Khant Phyo Wai",
+        "url": "https://khantphyowai.vercel.app/",
+        "image": "https://khantphyowai.vercel.app/images/profile.webp",
+        "jobTitle": "Co-Founder & CFO",
+        "worksFor": { "@type": "Organization", "name": "Sonar AI Co., Ltd." },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "CMKL University" },
+        "email": "mailto:kelvinwai.khantphyo@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lat Krabang, Bangkok", "addressCountry": "TH" },
+        "sameAs": [
+            "https://github.com/DolphinsAreWeird",
+            "https://www.linkedin.com/in/khant-phyo-wai/",
+            "https://www.instagram.com/khant_p_wai/"
+        ]
+    }
+    </script>
 </head>
 <body>
 
-    <!-- Fixed background decoration -->
-    <div class="bg-elements">
-        <div class="bg-circle circle-1"></div>
-        <div class="bg-circle circle-2"></div>
-        <div class="bg-circle circle-3"></div>
-        <div class="bg-shape shape-1"></div>
-        <div class="bg-shape shape-2"></div>
-        <div class="gradient-bg"></div>
-        <div id="particles-js"></div>
-    </div>
+    <!-- ===================== NAV ===================== -->
+    <header class="navbar">
+        <nav class="nav-container" aria-label="Main navigation">
+            <a href="#hero" class="logo"><span class="logo-mark">KP</span><span class="logo-name">Khant&nbsp;Phyo&nbsp;Wai</span></a>
 
-    <!-- Section placeholders — replaced by loader.js at runtime -->
-    <div id="partial-nav"></div>
-    <div id="partial-hero"></div>
-    <div id="partial-about"></div>
-    <div id="partial-expertise"></div>
-    <div id="partial-projects"></div>
-    <div id="partial-web-projects"></div>
-    <div id="partial-certificates"></div>
-    <div id="partial-experience"></div>
-    <div id="partial-contact"></div>
-    <div id="partial-footer"></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#web-projects" data-i18n="nav.webprojects">Websites</a></li>
+                <li><a href="#certificates" data-i18n="nav.certificates">Certificates</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
+            </ul>
 
-    <script src="js/loader.js"></script>
+            <div class="nav-actions">
+                <div class="language-toggle">
+                    <button class="lang-btn" type="button" aria-haspopup="listbox" aria-label="Change language">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
+                        <span class="current-lang">EN</span>
+                    </button>
+                    <div class="lang-dropdown" role="listbox">
+                        <a href="#" data-lang="en" role="option">English</a>
+                        <a href="#" data-lang="my" role="option">မြန်မာ</a>
+                        <a href="#" data-lang="th" role="option">ไทย</a>
+                    </div>
+                </div>
+                <button class="theme-switch" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+                    <span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <p class="hero-kicker reveal" data-i18n="hero.kicker">Hello · မင်္ဂလာပါ · สวัสดีครับ</p>
+            <h1 class="hero-name reveal">Khant Phyo Wai</h1>
+            <div class="hero-roles reveal">
+                <span class="pill pill-dark" data-i18n="hero.role1">Co-Founder &amp; CFO</span>
+                <span class="pill pill-beige" data-i18n="hero.role2">AI Engineer</span>
+                <span class="pill pill-beige" data-i18n="hero.role3">Project Leader</span>
+            </div>
+            <p class="hero-tagline reveal" data-i18n="hero.tagline">Building at the intersection of AI and business — turning intelligent systems into real-world outcomes.</p>
+            <div class="hero-buttons reveal">
+                <a href="#projects" class="btn btn-primary" data-i18n="hero.projects">View Projects</a>
+                <a href="files/KPResume.pdf" download class="btn btn-accent"><i class="fas fa-download" aria-hidden="true"></i>&nbsp;<span data-i18n="hero.cv">Download CV</span></a>
+                <a href="#contact" class="btn btn-outline" data-i18n="hero.contact">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-scroll reveal" aria-hidden="true"><i class="fas fa-arrow-down"></i></div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="about">
+        <div class="container">
+            <p class="section-kicker" data-i18n="about.kicker">01 — About</p>
+            <h2 class="section-title" data-i18n="about.title">A little about me</h2>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about.p1">I'm the Co-Founder &amp; CFO at <strong>Sonar AI</strong> — a startup using AI and computer vision to transform physical books into professional-quality audiobooks at a fraction of traditional production costs. We built our own OCR pipeline, text-to-speech synthesis, and book-scanning system from the ground up, and have won multiple recognitions for it. As CFO, I own financial modeling, pricing strategy, and business development.</p>
+                    <p data-i18n="about.p2">I'm also an AI Engineer Apprentice at CMKL University, pursuing a Bachelor's in AI and Computer Engineering (QPA 3.8/4.0). Previously, I was a NOC Data Analyst intern at Agoda and most recently a Project Leader intern at True Alpha, leading a cross-functional team. My background spans startup, enterprise, and research environments.</p>
+                    <p data-i18n="about.p3">Outside of tech, I work as an education consultant helping local students. I'm most alive where AI, business, and data converge — building financial models, designing ML pipelines, or thinking through product strategy.</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label" data-i18n="about.stat1">Fully-Funded Scholarships</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="12">0</span>
+                            <span class="stat-label" data-i18n="about.stat2">Projects Delivered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3.8">0</span>
+                            <span class="stat-label" data-i18n="about.stat3">QPA / 4.0</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack" aria-label="Technologies">
+                        <span class="pill pill-beige">Python</span>
+                        <span class="pill pill-beige">PyTorch</span>
+                        <span class="pill pill-beige">TensorFlow</span>
+                        <span class="pill pill-beige">OpenCV</span>
+                        <span class="pill pill-beige">YOLOv8</span>
+                        <span class="pill pill-beige">SQL</span>
+                        <span class="pill pill-beige">React</span>
+                        <span class="pill pill-beige">JavaScript</span>
+                        <span class="pill pill-beige">Java</span>
+                        <span class="pill pill-beige">Git</span>
+                        <span class="pill pill-beige">TouchDesigner</span>
+                        <span class="pill pill-beige">Figma</span>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="images/profile.webp" alt="Portrait of Khant Phyo Wai" width="900" height="1199" fetchpriority="high">
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/DolphinsAreWeird" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/khant-phyo-wai/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100025576650913" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/khant_p_wai/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXPERTISE ===================== -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <p class="section-kicker" data-i18n="expertise.kicker">02 — Expertise</p>
+            <h2 class="section-title" data-i18n="expertise.title">What I do</h2>
+
+            <div class="expertise-grid">
+                <article class="expertise-card reveal">
+                    <div class="expertise-icon"><i class="fas fa-microchip"></i></div>
+                    <h3 data-i18n="expertise.ai.title">AI &amp; Data Science</h3>
+                    <p data-i18n="expertise.ai.summary">Building applied AI systems — from computer vision pipelines and NLP models to data analysis and LLM integration.</p>
+                    <div class="tag-row">
+                        <span class="tag">Computer Vision</span><span class="tag">Machine Learning</span><span class="tag">NLP &amp; LLMs</span><span class="tag">OCR</span><span class="tag">TTS</span><span class="tag">PyTorch</span><span class="tag">HuggingFace</span>
+                    </div>
+                </article>
+
+                <article class="expertise-card reveal">
+                    <div class="expertise-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 data-i18n="expertise.business.title">Business &amp; Finance</h3>
+                    <p data-i18n="expertise.business.summary">From startup CFO to strategy consultant — building financial models, go-to-market plans, and data-driven business cases.</p>
+                    <div class="tag-row">
+                        <span class="tag">Financial Modeling</span><span class="tag">Unit Economics</span><span class="tag">Market Analysis</span><span class="tag">Go-to-Market</span><span class="tag">Pricing</span><span class="tag">Stakeholder Management</span>
+                    </div>
+                </article>
+
+                <article class="expertise-card reveal">
+                    <div class="expertise-icon"><i class="fas fa-pencil-alt"></i></div>
+                    <h3 data-i18n="expertise.creative.title">Creative &amp; Design</h3>
+                    <p data-i18n="expertise.creative.summary">Creating engaging content and immersive experiences through thoughtful design and compelling storytelling.</p>
+                    <div class="tag-row">
+                        <span class="tag">UX Design</span><span class="tag">Copywriting</span><span class="tag">Game Development</span><span class="tag">Figma</span><span class="tag">TouchDesigner</span><span class="tag">Generative Art</span>
+                    </div>
+                </article>
+
+                <article class="expertise-card reveal">
+                    <div class="expertise-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 data-i18n="expertise.web.title">Web Development</h3>
+                    <p data-i18n="expertise.web.summary">Building functional, responsive websites and web applications tailored to business and user needs.</p>
+                    <div class="tag-row">
+                        <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">HTML / CSS</span><span class="tag">Node.js</span><span class="tag">REST APIs</span><span class="tag">Performance</span>
+                    </div>
+                </article>
+
+                <article class="expertise-card reveal">
+                    <div class="expertise-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 data-i18n="expertise.education.title">Education &amp; Teaching</h3>
+                    <p data-i18n="expertise.education.summary">Helping students grow through personalised instruction, curriculum development, and exam preparation.</p>
+                    <div class="tag-row">
+                        <span class="tag">Mathematics</span><span class="tag">English</span><span class="tag">Science</span><span class="tag">GED Prep</span><span class="tag">Curriculum Design</span><span class="tag">Workshops</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <p class="section-kicker" data-i18n="projects.kicker">03 — Projects</p>
+            <h2 class="section-title" data-i18n="projects.title">Featured projects</h2>
+
+            <div class="filter-buttons" role="group" aria-label="Filter projects">
+                <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">All</button>
+                <button class="filter-btn" data-filter="ai" data-i18n="projects.filter.ai">AI</button>
+                <button class="filter-btn" data-filter="cv" data-i18n="projects.filter.cv">Computer Vision</button>
+                <button class="filter-btn" data-filter="nlp" data-i18n="projects.filter.nlp">NLP</button>
+                <button class="filter-btn" data-filter="business" data-i18n="projects.filter.business">Business</button>
+                <button class="filter-btn" data-filter="design" data-i18n="projects.filter.design">Design</button>
+            </div>
+
+            <div class="project-grid">
+
+                <!-- Mirror Relexion AI -->
+                <article class="project-card reveal" data-category="ai cv design">
+                    <div class="project-img">
+                        <img src="images/404.webp" alt="Mirror Relexion AI" width="1200" height="1021" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="tag-row">
+                            <span class="tag tag-accent">AI</span><span class="tag">Computer Vision</span><span class="tag">Interactive Art</span>
+                        </div>
+                        <h3>Mirror Relexion AI</h3>
+                        <p data-i18n="projects.mirror.desc">A real-time interactive visual system using TouchDesigner and diffusion models that responds dynamically to live camera input and human movement.</p>
+                        <button class="project-more" type="button"><span data-i18n="projects.details">Details</span>&nbsp;<i class="fas fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="project-details">
+                        <button class="details-close" type="button" aria-label="Close details"><i class="fas fa-xmark"></i></button>
+                        <h3>Mirror Relexion AI</h3>
+                        <p data-i18n="projects.mirror.hover">A generative art installation that mirrors and transforms human movement in real time using diffusion models and live computer vision. Deployed at live events and summits.</p>
+                        <h4 data-i18n="projects.label.objective">Objective</h4>
+                        <p data-i18n="projects.mirror.obj">Create an immersive, responsive art experience that blurs the line between the viewer and the artwork through AI-generated visual feedback.</p>
+                        <h4 data-i18n="projects.label.technical">Technical Approach</h4>
+                        <p data-i18n="projects.mirror.tech">Integrated live camera feeds into a TouchDesigner pipeline with StreamDiffusion and ControlNet, feeding pose data into a diffusion model to generate stylised real-time visuals.</p>
+                        <div class="tag-row">
+                            <span class="tag">TouchDesigner</span><span class="tag">Stable Diffusion</span><span class="tag">OpenCV</span><span class="tag">Python</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SonarAudiobooks -->
+                <article class="project-card reveal" data-category="ai business cv">
+                    <div class="project-img">
+                        <img src="images/Sonar.webp" alt="SonarAudiobooks" width="1200" height="1697" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="tag-row">
+                            <span class="tag tag-accent">AI</span><span class="tag">Accessibility</span><span class="tag">Business</span>
+                        </div>
+                        <h3>SonarAudiobooks</h3>
+                        <p data-i18n="projects.sonar.desc">A platform transforming physical books into audiobooks for the visually impaired using AI and computer vision.</p>
+                        <div class="project-actions">
+                            <a href="https://sonaraudiobooks.com/" target="_blank" rel="noopener" class="project-link"><span data-i18n="projects.view">Visit</span>&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button class="project-more" type="button"><span data-i18n="projects.details">Details</span>&nbsp;<i class="fas fa-plus" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <button class="details-close" type="button" aria-label="Close details"><i class="fas fa-xmark"></i></button>
+                        <h3>SonarAudiobooks</h3>
+                        <p data-i18n="projects.sonar.hover">An AI-powered tool that converts physical books into audiobooks with natural, non-robotic narration for visually impaired users.</p>
+                        <h4 data-i18n="projects.label.technical">Technical Approach</h4>
+                        <p data-i18n="projects.sonar.tech">With my team, developed a custom OCR pipeline for text extraction, integrated high-accuracy text-to-speech synthesis, and optimised real-time book scanning using computer vision.</p>
+                        <h4 data-i18n="projects.label.business">Business Development</h4>
+                        <p data-i18n="projects.sonar.biz">Designed a marketing strategy targeting accessibility communities, libraries, and educational institutions. Built engagement through social media and partnerships.</p>
+                        <div class="tag-row">
+                            <span class="tag">OpenCV</span><span class="tag">React</span><span class="tag">YOLO</span><span class="tag">TTS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Harmony Vision -->
+                <article class="project-card reveal" data-category="design ai">
+                    <div class="project-img">
+                        <img src="images/harmony.webp" alt="Harmony Vision" width="1038" height="1400" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="tag-row">
+                            <span class="tag tag-accent">AR</span><span class="tag">AI</span><span class="tag">Interaction Design</span>
+                        </div>
+                        <h3>Harmony Vision</h3>
+                        <p data-i18n="projects.harmony.desc">An AR-based guitar learning tool providing real-time visual guidance and feedback using AI-powered gesture recognition.</p>
+                        <button class="project-more" type="button"><span data-i18n="projects.details">Details</span>&nbsp;<i class="fas fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="project-details">
+                        <button class="details-close" type="button" aria-label="Close details"><i class="fas fa-xmark"></i></button>
+                        <h3>Harmony Vision</h3>
+                        <p data-i18n="projects.harmony.hover">An AI-powered AR guitar learning system offering real-time feedback and visual overlays for an intuitive practice experience.</p>
+                        <h4 data-i18n="projects.label.objective">Objective</h4>
+                        <p data-i18n="projects.harmony.obj">Enhance the guitar learning experience with real-time, interactive feedback through AR technology and AI-driven analysis.</p>
+                        <h4 data-i18n="projects.label.business">Business Development</h4>
+                        <p data-i18n="projects.harmony.biz">Conducted user research with beginner and intermediate players to refine features. Explored partnerships with music educators and AR hardware providers.</p>
+                        <div class="tag-row">
+                            <span class="tag">Unity3D</span><span class="tag">PyTorch</span><span class="tag">C#</span><span class="tag">Arduino</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Thai Neighbourhood -->
+                <article class="project-card reveal" data-category="business ai">
+                    <div class="project-img">
+                        <img src="images/mhtn.webp" alt="My Happy Thai Neighbourhood" width="900" height="1273" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="tag-row">
+                            <span class="tag tag-accent" data-i18n="projects.thai.tag1">Business Strategy</span><span class="tag">AI &amp; Data</span><span class="tag" data-i18n="projects.thai.tag2">Community</span>
+                        </div>
+                        <h3 data-i18n="projects.thai.title">Thai Neighbourhood</h3>
+                        <p data-i18n="projects.thai.desc">A sustainable business model and financial strategy for a tech-driven community development initiative under CMKL University's R&amp;D program.</p>
+                        <div class="project-actions">
+                            <a href="https://lab404.mystrikingly.com/" target="_blank" rel="noopener" class="project-link"><span data-i18n="projects.view">Visit</span>&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button class="project-more" type="button"><span data-i18n="projects.details">Details</span>&nbsp;<i class="fas fa-plus" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <button class="details-close" type="button" aria-label="Close details"><i class="fas fa-xmark"></i></button>
+                        <h3 data-i18n="projects.thai.title">Thai Neighbourhood</h3>
+                        <p data-i18n="projects.thai.hover">AI-powered economic growth strategies to enhance local businesses, preserve cultural heritage, and drive digital transformation in Thai communities.</p>
+                        <h4 data-i18n="projects.label.technical">Technical Approach</h4>
+                        <p data-i18n="projects.thai.tech">Leveraged AI-driven analytics to assess economic patterns, predict community needs, and optimise local resource distribution across tourism, small business, and digital services.</p>
+                        <h4 data-i18n="projects.label.business">Business Development</h4>
+                        <p data-i18n="projects.thai.biz">Designed comprehensive financial projections and established partnerships with government agencies, local entrepreneurs, and educational institutions.</p>
+                        <div class="tag-row">
+                            <span class="tag">Unity</span><span class="tag">Figma</span><span class="tag">C#</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AI-Levator -->
+                <article class="project-card reveal" data-category="ai business">
+                    <div class="project-img">
+                        <img src="images/elevator-opt.webp" alt="AI-Levator" width="900" height="883" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="tag-row">
+                            <span class="tag tag-accent">AI</span><span class="tag">Digital Twin</span><span class="tag" data-i18n="projects.ailevator.tag1">Business Plan</span>
+                        </div>
+                        <h3>AI-Levator</h3>
+                        <p data-i18n="projects.ailevator.desc">An AI-driven elevator optimisation system that reduces wait times and energy consumption by predicting peak usage and dynamically adjusting dispatching.</p>
+                        <button class="project-more" type="button"><span data-i18n="projects.details">Details</span>&nbsp;<i class="fas fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="project-details">
+                        <button class="details-close" type="button" aria-label="Close details"><i class="fas fa-xmark"></i></button>
+                        <h3>AI-Levator</h3>
+                        <p data-i18n="projects.ailevator.hover">Enhancing elevator efficiency in high-rise buildings through AI-powered predictive modeling, reducing operational costs and improving user experience.</p>
+                        <h4 data-i18n="projects.label.technical">Technical Approach</h4>
+                        <p data-i18n="projects.ailevator.tech">Implemented reinforcement learning algorithms and digital twin simulations to optimise elevator scheduling from real-time data and historical patterns.</p>
+                        <h4 data-i18n="projects.label.business">Business Development</h4>
+                        <p data-i18n="projects.ailevator.biz">Designed a B2B SaaS model showcasing 30% energy savings and a 40% reduction in wait times, with a financial model for implementation and maintenance services.</p>
+                        <div class="tag-row">
+                            <span class="tag">TensorFlow</span><span class="tag">Python</span><span class="tag">Unity3D</span><span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Fallacy Hunter -->
+                <article class="project-card reveal" data-category="nlp ai business">
+                    <div class="project-img">
+                        <img src="images/fallacy.webp" alt="Fallacy Hunter" width="900" height="1273" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="tag-row">
+                            <span class="tag tag-accent">NLP</span><span class="tag">AI</span><span class="tag" data-i18n="projects.fallacy.tag1">Education</span>
+                        </div>
+                        <h3>Fallacy Hunter</h3>
+                        <p data-i18n="projects.fallacy.desc">An AI-powered NLP tool that detects logical fallacies in text, improving critical thinking and argumentation skills.</p>
+                        <button class="project-more" type="button"><span data-i18n="projects.details">Details</span>&nbsp;<i class="fas fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="project-details">
+                        <button class="details-close" type="button" aria-label="Close details"><i class="fas fa-xmark"></i></button>
+                        <h3>Fallacy Hunter</h3>
+                        <p data-i18n="projects.fallacy.hover">An AI-driven tool that identifies and explains logical fallacies in text, supporting education and debate training.</p>
+                        <h4 data-i18n="projects.label.technical">Technical Approach</h4>
+                        <p data-i18n="projects.fallacy.tech">Utilised transformer-based NLP models to classify over 15 common fallacies, with an interactive explanation system for user learning.</p>
+                        <h4 data-i18n="projects.label.business">Business Development</h4>
+                        <p data-i18n="projects.fallacy.biz">Conducted market research with educators and debate organisations. Designed a tiered pricing model for integration with learning management systems.</p>
+                        <div class="tag-row">
+                            <span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">Flask</span><span class="tag">React</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== WEB PROJECTS ===================== -->
+    <section id="web-projects" class="web-projects">
+        <div class="container">
+            <p class="section-kicker" data-i18n="web.kicker">04 — Websites</p>
+            <h2 class="section-title" data-i18n="web.title">Websites I've shipped</h2>
+            <p class="section-subtitle" data-i18n="web.subtitle">A selection of sites I've designed, developed, and deployed.</p>
+
+            <div class="web-projects-grid">
+
+                <article class="web-project-card reveal">
+                    <a href="https://dolphinsareweird.github.io/ConnectEd-PHM/" target="_blank" rel="noopener" class="web-project-img" aria-label="Visit ConnectEd PHM">
+                        <img src="images/web-connected.webp" alt="ConnectEd PHM website" width="1280" height="515" loading="lazy">
+                        <span class="visit-pill"><span data-i18n="web.visit">Visit site</span>&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <div class="web-project-info">
+                        <h3>ConnectEd PHM</h3>
+                        <p data-i18n="web.connected.desc">Educational platform with interactive learning resources and student management capabilities.</p>
+                        <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    </div>
+                </article>
+
+                <article class="web-project-card reveal">
+                    <a href="https://simpalclothing.netlify.app/" target="_blank" rel="noopener" class="web-project-img" aria-label="Visit Simpal Clothing">
+                        <img src="images/web-simpal.webp" alt="Simpal Clothing website" width="1280" height="581" loading="lazy">
+                        <span class="visit-pill"><span data-i18n="web.visit">Visit site</span>&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <div class="web-project-info">
+                        <h3>Simpal Clothing</h3>
+                        <p data-i18n="web.simpal.desc">E-commerce website for a clothing brand with product catalog and shopping functionality.</p>
+                        <div class="tag-row"><span class="tag">React</span><span class="tag">CSS</span><span class="tag">Netlify</span></div>
+                    </div>
+                </article>
+
+                <article class="web-project-card reveal">
+                    <a href="https://sonaraudiobooks.com/" target="_blank" rel="noopener" class="web-project-img" aria-label="Visit Sonar Audiobooks">
+                        <img src="images/web-sonar.webp" alt="Sonar Audiobooks website" width="1280" height="617" loading="lazy">
+                        <span class="visit-pill"><span data-i18n="web.visit">Visit site</span>&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <div class="web-project-info">
+                        <h3>Sonar Audiobooks</h3>
+                        <p data-i18n="web.sonar.desc">Platform for converting physical books into audiobooks using AI technology for visually impaired users.</p>
+                        <div class="tag-row"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">AI</span></div>
+                    </div>
+                </article>
+
+                <article class="web-project-card reveal">
+                    <a href="https://meganing.github.io/MyPortfolio/" target="_blank" rel="noopener" class="web-project-img" aria-label="Visit Mega Portfolio">
+                        <img src="images/web-portfolio.webp" alt="Mega Portfolio website" width="1280" height="605" loading="lazy">
+                        <span class="visit-pill"><span data-i18n="web.visit">Visit site</span>&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <div class="web-project-info">
+                        <h3>Mega Portfolio</h3>
+                        <p data-i18n="web.mega.desc">Personal portfolio website showcasing creative work with smooth animations and clean design.</p>
+                        <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    </div>
+                </article>
+
+                <article class="web-project-card reveal">
+                    <a href="https://lab404.mystrikingly.com/" target="_blank" rel="noopener" class="web-project-img" aria-label="Visit Lab 404">
+                        <img src="images/web-lab404.webp" alt="Lab 404 website" width="1280" height="609" loading="lazy">
+                        <span class="visit-pill"><span data-i18n="web.visit">Visit site</span>&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <div class="web-project-info">
+                        <h3>Lab 404</h3>
+                        <p data-i18n="web.lab404.desc">Research lab website featuring project showcases, team profiles, and publication archives.</p>
+                        <div class="tag-row"><span class="tag">Strikingly</span><span class="tag">Custom CSS</span><span class="tag" data-i18n="web.lab404.tag">Content Strategy</span></div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CERTIFICATES ===================== -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <p class="section-kicker" data-i18n="certs.kicker">05 — Certificates</p>
+            <h2 class="section-title" data-i18n="certs.title">Certificates &amp; achievements</h2>
+
+            <div class="certificates-grid">
+                <article class="certificate-card reveal">
+                    <div class="certificate-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="certificate-content">
+                        <h3 data-i18n="certs.matric.title">Myanmar Matriculation Examination</h3>
+                        <h4 data-i18n="certs.matric.org">Myanmar Education Board</h4>
+                        <p data-i18n="certs.matric.desc">Achieved 5 distinctions out of 6 subjects with an outstanding score of 520/600, placing in the top percentile nationwide.</p>
+                        <span class="certificate-date">2018</span>
+                    </div>
+                </article>
+
+                <article class="certificate-card reveal">
+                    <div class="certificate-icon"><i class="fas fa-hashtag"></i></div>
+                    <div class="certificate-content">
+                        <h3 data-i18n="certs.meta.title">Introduction to Social Media Marketing</h3>
+                        <h4>Meta</h4>
+                        <p data-i18n="certs.meta.desc">Fundamentals of social media strategy, content planning, and campaign analytics to drive audience engagement and business growth.</p>
+                        <span class="certificate-date">2023</span>
+                    </div>
+                </article>
+
+                <article class="certificate-card reveal">
+                    <div class="certificate-icon"><i class="fas fa-gamepad"></i></div>
+                    <div class="certificate-content">
+                        <h3 data-i18n="certs.calarts.title">Character Design for Video Games</h3>
+                        <h4>California Institute of the Arts</h4>
+                        <p data-i18n="certs.calarts.desc">Creating compelling character designs with strong visual appeal and narrative integration for interactive experiences.</p>
+                        <span class="certificate-date">2023</span>
+                    </div>
+                </article>
+
+                <article class="certificate-card reveal">
+                    <div class="certificate-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div class="certificate-content">
+                        <h3 data-i18n="certs.boulder.title">Graphic Design</h3>
+                        <h4>University of Colorado Boulder</h4>
+                        <p data-i18n="certs.boulder.desc">Principles of visual communication, typography, color theory, and layout design for effective marketing materials.</p>
+                        <span class="certificate-date">2022</span>
+                    </div>
+                </article>
+
+                <article class="certificate-card reveal">
+                    <div class="certificate-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="certificate-content">
+                        <h3 data-i18n="certs.google.title">Technical Support Fundamentals</h3>
+                        <h4>Google</h4>
+                        <p data-i18n="certs.google.desc">Troubleshooting, system administration, and technical problem-solving to support digital platforms and users.</p>
+                        <span class="certificate-date">2022</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <p class="section-kicker" data-i18n="exp.kicker">06 — Experience</p>
+            <h2 class="section-title" data-i18n="exp.title">Where I've worked</h2>
+
+            <div class="experience-journey">
+
+                <!-- True Alpha -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.truealpha.date">June 2026 — July 2026</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-users-gear"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.truealpha.title">Project Leader (Internship)</h3>
+                            <h4>True Alpha</h4>
+                            <ul>
+                                <li data-i18n="exp.truealpha.b1">Led a cross-functional intern team spanning engineering, design, and business as Project Leader — owning planning, task delegation, and final delivery.</li>
+                                <li data-i18n="exp.truealpha.b2">Ran sprint cycles and stakeholder check-ins, translating mentor and leadership feedback into actionable tasks across workstreams.</li>
+                                <li data-i18n="exp.truealpha.b3">Presented the final project to company leadership, covering both the technical implementation and the business case.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.projectlead">Project Leadership</span>
+                                <span class="tag" data-i18n="exp.skill.crossfunctional">Cross-functional Teams</span>
+                                <span class="tag" data-i18n="exp.skill.sprint">Sprint Planning</span>
+                                <span class="tag" data-i18n="exp.skill.stakeholder">Stakeholder Communication</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SONAR AI - CFO -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.sonar.date">June 2025 — Present</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.sonar.title">Co-Founder &amp; Chief Financial Officer</h3>
+                            <h4>SONAR AI CO., LTD.</h4>
+                            <ul>
+                                <li data-i18n="exp.sonar.b1">Co-founded and scaled an AI audiobook platform that converts physical books into studio-quality narration using computer vision, OCR, and TTS — at under 10% of traditional production costs.</li>
+                                <li data-i18n="exp.sonar.b2">Lead all financial operations: P&amp;L management, pricing strategy, unit economics modeling, and investor-facing materials.</li>
+                                <li data-i18n="exp.sonar.b3">Drove go-to-market planning targeting accessibility communities, libraries, and educational institutions across SEA.</li>
+                                <li data-i18n="exp.sonar.b4">Received multiple awards at national and international showcases; represented the company at industry competitions.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.finmodel">Financial Modeling</span>
+                                <span class="tag" data-i18n="exp.skill.bizstrategy">Business Strategy</span>
+                                <span class="tag" data-i18n="exp.skill.startup">Startup Operations</span>
+                                <span class="tag" data-i18n="exp.skill.stakeholder">Stakeholder Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Agoda -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.agoda.date">May 2025 — Aug 2025</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-chart-column"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.agoda.title">NOC Data Analyst (Internship)</h3>
+                            <h4>Agoda Services Co., Ltd.</h4>
+                            <ul>
+                                <li data-i18n="exp.agoda.b1">Developed a pipeline to organise and analyse QoQ operational data using AI models within the NOC department.</li>
+                                <li data-i18n="exp.agoda.b2">Supported analysis of large-scale operational datasets for internal reporting and decision-making.</li>
+                                <li data-i18n="exp.agoda.b3">Collaborated with cross-functional teams, improving communication between technical and non-technical roles.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.dataanalysis">Data Analysis</span>
+                                <span class="tag" data-i18n="exp.skill.pipeline">Pipeline Development</span>
+                                <span class="tag" data-i18n="exp.skill.crossfunctional">Cross-functional Teams</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CMKL AI/Software Engineer -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.cmkl.date">April 2024 — Present</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.cmkl.title">AI / Software Engineer (Apprenticeship)</h3>
+                            <h4>CMKL University</h4>
+                            <ul>
+                                <li data-i18n="exp.cmkl.b1">Developed and tested AI-driven systems involving machine learning and computer vision.</li>
+                                <li data-i18n="exp.cmkl.b2">Managed multiple project timelines, balancing experimentation with deliverable requirements.</li>
+                                <li data-i18n="exp.cmkl.b3">Supported research-style workflows emphasising iteration, validation, and documentation.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.ml">Machine Learning</span>
+                                <span class="tag" data-i18n="exp.skill.cv">Computer Vision</span>
+                                <span class="tag" data-i18n="exp.skill.research">Research &amp; Iteration</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sonar Audiobooks lead -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.sonarab.date">July 2024 — Present</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-headphones"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.sonarab.title">Business Strategy &amp; Partnerships Lead</h3>
+                            <h4 data-i18n="exp.sonarab.org">SONAR Audiobooks (CMKL University Project)</h4>
+                            <ul>
+                                <li data-i18n="exp.sonarab.b1">Leading business strategy, financial projections, and market analysis for an accessible audio platform for visually impaired users.</li>
+                                <li data-i18n="exp.sonarab.b2">Built key technical components: OCR post-processing pipeline, audio generation pipeline, and book-tracking model.</li>
+                                <li data-i18n="exp.sonarab.b3">Developed an OpenCV-based guide for visually impaired navigation and a demo website showcasing the conversion pipeline.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.bizstrategy">Business Strategy</span>
+                                <span class="tag">OpenCV</span>
+                                <span class="tag" data-i18n="exp.skill.pipeline">Pipeline Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AI-Centric Designer -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.designer.date">April 2024 — Aug 2024</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-robot"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.designer.title">AI-Centric Designer (Internship)</h3>
+                            <h4>CMKL University</h4>
+                            <ul>
+                                <li data-i18n="exp.designer.b1">Experimented with generative and image-based AI models for system prototyping.</li>
+                                <li data-i18n="exp.designer.b2">Designed controlled experiments to test parameters, outputs, and performance trade-offs.</li>
+                                <li data-i18n="exp.designer.b3">Worked closely with engineers to integrate AI outputs into functional prototypes.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.genai">Generative AI</span>
+                                <span class="tag" data-i18n="exp.skill.prototyping">Prototyping</span>
+                                <span class="tag" data-i18n="exp.skill.experiment">Experiment Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Freelance -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.freelance.date">Jan 2023 — Present</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.freelance.title">Web Developer (Freelance)</h3>
+                            <h4 data-i18n="exp.freelance.org">Self-Employed</h4>
+                            <ul>
+                                <li data-i18n="exp.freelance.b1">Develop custom, responsive websites and web applications tailored to client needs.</li>
+                                <li data-i18n="exp.freelance.b2">Collaborate closely with clients on UI/UX-focused designs, ensuring usability and satisfaction.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.webdev">Web Development</span>
+                                <span class="tag">UI/UX</span>
+                                <span class="tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Marketing intern -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.marketing.date">July 2023 — Dec 2023</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-pen-nib"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.marketing.title">Marketing &amp; Copywriting Intern</h3>
+                            <h4>Connected Pathways Hub Myanmar</h4>
+                            <ul>
+                                <li data-i18n="exp.marketing.b1">Created marketing content and compelling copy informed by research on digital trends.</li>
+                                <li data-i18n="exp.marketing.b2">Conducted financial and strategic analysis to support campaign optimisation efforts.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.content">Content Creation</span>
+                                <span class="tag" data-i18n="exp.skill.marketing">Digital Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Teacher -->
+                <article class="experience-item reveal">
+                    <div class="experience-date"><span data-i18n="exp.teacher.date">Dec 2021 — Dec 2023</span></div>
+                    <div class="experience-content">
+                        <div class="experience-icon"><i class="fas fa-chalkboard-user"></i></div>
+                        <div class="experience-details">
+                            <h3 data-i18n="exp.teacher.title">Assistant Teacher</h3>
+                            <h4>Teacher Su International School</h4>
+                            <ul>
+                                <li data-i18n="exp.teacher.b1">Developed engaging curriculum and provided personalised instruction for STEM subjects.</li>
+                                <li data-i18n="exp.teacher.b2">Managed exam preparation programs for Matriculation and GED candidates.</li>
+                                <li data-i18n="exp.teacher.b3">Conducted workshops introducing students to computer science fundamentals and practical AI applications.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="exp.skill.curriculum">Curriculum Development</span>
+                                <span class="tag" data-i18n="exp.skill.teaching">Teaching</span>
+                                <span class="tag" data-i18n="exp.skill.aied">AI Education</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <p class="section-kicker" data-i18n="contact.kicker">07 — Contact</p>
+            <h2 class="section-title" data-i18n="contact.title">Let's talk</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Have a project, an opportunity, or just want to say hi? My inbox is open.</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <h3 data-i18n="contact.location.title">Location</h3>
+                            <p data-i18n="contact.location.value">Lat Krabang, Bangkok, Thailand</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h3 data-i18n="contact.email.title">Email</h3>
+                            <p><a href="mailto:kelvinwai.khantphyo@gmail.com">kelvinwai.khantphyo@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h3 data-i18n="contact.phone.title">Phone</h3>
+                            <p><a href="tel:+66920910228">+66 92 091 0228</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h3 data-i18n="contact.connect">Connect with me</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/DolphinsAreWeird" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/khant-phyo-wai/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100025576650913" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/khant_p_wai/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required data-i18n-placeholder="contact.form.name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required data-i18n-placeholder="contact.form.email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" data-i18n-placeholder="contact.form.subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required data-i18n-placeholder="contact.form.message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
+                    <div id="form-status" role="status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Khant Phyo Wai</h3>
+                    <p data-i18n="footer.tagline">Co-Founder &amp; CFO · AI Engineer</p>
+                </div>
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+                    <a href="#projects" data-i18n="nav.projects">Projects</a>
+                    <a href="#web-projects" data-i18n="nav.webprojects">Websites</a>
+                    <a href="#certificates" data-i18n="nav.certificates">Certificates</a>
+                    <a href="#experience" data-i18n="nav.experience">Experience</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                </nav>
+                <div class="social-links">
+                    <a href="https://github.com/DolphinsAreWeird" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/khant-phyo-wai/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100025576650913" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/khant_p_wai/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Khant Phyo Wai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" type="button" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="js/contact.js" defer></script>
 </body>
 </html>
