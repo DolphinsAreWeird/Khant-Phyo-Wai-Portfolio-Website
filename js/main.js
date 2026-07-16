@@ -215,6 +215,21 @@
         }
     });
 
+    /* ===== Smooth scrolling for in-page anchors ===== */
+    const smoothOK = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            const id = this.getAttribute('href');
+            if (id === '#') return;
+            const target = document.querySelector(id);
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: smoothOK ? 'smooth' : 'auto' });
+            history.replaceState(null, '', id);
+        });
+    });
+
     /* ===== Scroll to top ===== */
     const scrollTopBtn = document.querySelector('.scroll-top-btn');
 

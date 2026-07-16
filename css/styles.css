@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Khant Phyo Wai — Portfolio
+   Khant Phyo Wai Portfolio
    Editorial cream theme + warm dark mode
    ========================================================================== */
 
@@ -24,7 +24,7 @@
     --radius-md:  18px;
     --radius-sm:  12px;
 
-    --font-serif: 'Fraunces', 'Noto Serif Thai', 'Noto Serif Myanmar', Georgia, serif;
+    --font-display: 'Bricolage Grotesque', 'Noto Sans Thai', 'Noto Sans Myanmar', 'Inter', sans-serif;
     --font-sans:  'Inter', 'Noto Sans Thai', 'Noto Sans Myanmar', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
     --nav-h: 72px;
@@ -50,7 +50,7 @@ html.dark-mode {
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+html { scroll-padding-top: calc(var(--nav-h) + 16px); }
 
 body {
     font-family: var(--font-sans);
@@ -71,7 +71,7 @@ img { max-width: 100%; display: block; }
 
 a { color: inherit; text-decoration: none; }
 
-h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; }
 
 .container {
     width: min(1120px, 100% - 3rem);
@@ -141,6 +141,9 @@ html[lang="my"] .tag, html[lang="th"] .tag { letter-spacing: 0; text-transform: 
 
 /* ---------- Section headers ---------- */
 .section-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.16em;
@@ -148,12 +151,24 @@ html[lang="my"] .tag, html[lang="th"] .tag { letter-spacing: 0; text-transform: 
     color: var(--accent);
     margin-bottom: 0.9rem;
 }
+.section-kicker::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
 html[lang="my"] .section-kicker, html[lang="th"] .section-kicker { letter-spacing: 0.04em; text-transform: none; font-size: 0.9rem; }
 
 .section-title {
     font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
     margin-bottom: 1rem;
 }
+.section-title::after { content: '.'; color: var(--accent); }
 
 .section-subtitle {
     color: var(--ink-soft);
@@ -196,14 +211,13 @@ html[lang="my"] .section-kicker, html[lang="th"] .section-kicker { letter-spacin
 
 .logo { display: flex; align-items: baseline; gap: 0.6rem; }
 .logo-mark {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-style: italic;
+    font-family: var(--font-display);
+    font-weight: 800;
     font-size: 1.5rem;
     color: var(--accent);
 }
 .logo-name {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-size: 1.02rem;
     font-weight: 600;
     color: var(--ink);
@@ -303,6 +317,12 @@ html[lang="my"] .section-kicker, html[lang="th"] .section-kicker { letter-spacin
     overflow: hidden;
 }
 
+/* dotted paper grid */
+.hero {
+    background-image: radial-gradient(color-mix(in srgb, var(--muted) 28%, transparent) 1px, transparent 1px);
+    background-size: 26px 26px;
+}
+
 /* soft editorial backdrop */
 .hero::before,
 .hero::after {
@@ -333,10 +353,11 @@ html[lang="my"] .section-kicker, html[lang="th"] .section-kicker { letter-spacin
 
 .hero-name {
     font-size: clamp(2.8rem, 9vw, 5.4rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    letter-spacing: -0.025em;
     margin-bottom: 1.6rem;
 }
+.hero-name::after { content: '.'; color: var(--accent); }
 
 .hero-roles {
     display: flex;
@@ -373,6 +394,38 @@ html[lang="my"] .section-kicker, html[lang="th"] .section-kicker { letter-spacin
     50%      { transform: translate(-50%, 8px); }
 }
 
+/* ---------- Skill ticker ---------- */
+.ticker {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+    padding: 0.9rem 0;
+    transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+.ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    width: max-content;
+    animation: ticker-scroll 28s linear infinite;
+}
+.ticker-track span {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+}
+.ticker-track .ticker-dot { color: var(--accent); letter-spacing: 0; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
 /* ---------- About ---------- */
 .about-content {
     display: grid;
@@ -400,7 +453,7 @@ html[lang="my"] .section-kicker, html[lang="th"] .section-kicker { letter-spacin
 }
 .stat-number {
     display: block;
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-size: 2.1rem;
     font-weight: 700;
     color: var(--accent);
@@ -503,7 +556,7 @@ html[lang="my"] .section-kicker, html[lang="th"] .section-kicker { letter-spacin
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
-.project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.project-card:hover { transform: translateY(-5px) rotate(-0.4deg); box-shadow: var(--shadow-lg); }
 .project-card.filtered-out { display: none; }
 
 .project-img {
@@ -929,9 +982,9 @@ html.dark-mode #form-status.error   { background: #3D2521; color: #F0A48D; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .hero-scroll { animation: none; }
+    .ticker-track { animation: none; }
     *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
 
