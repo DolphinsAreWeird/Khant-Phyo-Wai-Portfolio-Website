@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khant Phyo Wai - Formal Portfolio</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #1b2430;
+      background: #f4f1eb;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      line-height: 1.45;
+    }
+
+    .document {
+      width: 210mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 20px 70px rgba(20, 32, 43, 0.12);
+    }
+
+    .page {
+      height: 296mm;
+      padding: 18mm 17mm;
+      position: relative;
+      background: #ffffff;
+    }
+
+    .page + .page {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #ffffff;
+      background:
+        linear-gradient(110deg, rgba(13, 34, 48, 0.94), rgba(13, 34, 48, 0.76)),
+        url("../images/profile.webp") center / cover;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #9ec5c1;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 132mm;
+      margin-bottom: 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 48px;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 136mm;
+      color: #e7eceb;
+      font-size: 18px;
+      line-height: 1.48;
+    }
+
+    .contact-bar {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 16px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
+      color: #dce7e5;
+      font-size: 10.5px;
+    }
+
+    .cover-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .metric {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .metric strong {
+      display: block;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: #d8e7e5;
+      font-size: 9.5px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #20303b;
+      color: #20303b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      line-height: 1.1;
+    }
+
+    .section-kicker {
+      margin-bottom: 8px;
+      color: #53736f;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .profile-copy {
+      font-size: 12.2px;
+    }
+
+    .panel {
+      padding: 14px;
+      border-left: 4px solid #5a837e;
+      background: #f5f7f6;
+    }
+
+    .panel h3 {
+      margin-bottom: 8px;
+      color: #20303b;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .skill-card {
+      padding: 12px;
+      border: 1px solid #d8e0df;
+      background: #ffffff;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 5px;
+      color: #21313b;
+      font-size: 12px;
+    }
+
+    .skill-card p,
+    .panel p,
+    .case-card p,
+    li {
+      color: #3b4650;
+      font-size: 10.6px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 11px;
+    }
+
+    .role {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dfe5e4;
+    }
+
+    .role:last-child {
+      border-bottom: 0;
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 5px;
+    }
+
+    .role h3 {
+      margin-bottom: 2px;
+      color: #17242d;
+      font-size: 13.3px;
+    }
+
+    .role-company {
+      color: #53736f;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .role-date {
+      flex: 0 0 auto;
+      color: #66727a;
+      font-size: 10px;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .venture {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .venture img,
+    .case-card img {
+      width: 100%;
+      display: block;
+      border: 1px solid #d9e1df;
+      object-fit: cover;
+    }
+
+    .venture img {
+      aspect-ratio: 4 / 3;
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .summary-item {
+      padding: 10px 12px;
+      border-left: 3px solid #5a837e;
+      background: #f7f8f7;
+      font-size: 10.6px;
+    }
+
+    .summary-item strong {
+      color: #20303b;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .case-card {
+      border: 1px solid #d8e0df;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      background: #ffffff;
+    }
+
+    .case-card img {
+      height: 33mm;
+    }
+
+    .case-body {
+      padding: 12px;
+    }
+
+    .case-card h3 {
+      margin-bottom: 4px;
+      color: #17242d;
+      font-size: 13px;
+    }
+
+    .case-meta {
+      margin-bottom: 7px;
+      color: #5a837e;
+      font-size: 9.7px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      padding: 3px 6px;
+      border: 1px solid #ccd9d6;
+      color: #405a57;
+      font-size: 8.7px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .web-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .web-item {
+      display: grid;
+      grid-template-columns: 30mm 1fr;
+      gap: 11px;
+      align-items: center;
+      padding: 9px;
+      border: 1px solid #d8e0df;
+    }
+
+    .web-item img {
+      width: 30mm;
+      height: 18mm;
+      object-fit: cover;
+      border: 1px solid #e1e7e5;
+    }
+
+    .web-item h3 {
+      margin-bottom: 3px;
+      color: #17242d;
+      font-size: 12px;
+    }
+
+    .web-item p {
+      margin-bottom: 2px;
+      font-size: 10px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .compact-list li {
+      margin-bottom: 5px;
+    }
+
+    .footer-note {
+      position: absolute;
+      right: 17mm;
+      bottom: 9mm;
+      left: 17mm;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #dbe2e1;
+      padding-top: 5px;
+      color: #758086;
+      font-size: 8.5px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .document {
+        width: auto;
+        margin: 0;
+        box-shadow: none;
+      }
+
+      .page {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="document">
+    <section class="page cover">
+      <div>
+        <p class="eyebrow">Formal Portfolio | AI, Data, Strategy</p>
+        <h1>Khant Phyo Wai</h1>
+        <p class="subtitle">AI and Computer Engineering student, startup co-founder, and applied AI builder working across product strategy, accessibility technology, data analysis, computer vision, and cross-functional execution.</p>
+        <div class="cover-metrics">
+          <div class="metric"><strong>3.8</strong><span>QPA in AI & Computer Engineering</span></div>
+          <div class="metric"><strong>2025</strong><span>Co-founded SONAR AI CO., LTD.</span></div>
+          <div class="metric"><strong>AI + Data</strong><span>Applied systems, analytics, and strategy</span></div>
+        </div>
+      </div>
+      <div class="contact-bar">
+        <span>Email: kelvinwai.khantphyo@gmail.com</span>
+        <span>Phone: +66 92 091 0228</span>
+        <span>LinkedIn: linkedin.com/in/khant-phyo-wai</span>
+        <span>Portfolio: khantphyowai.vercel.app</span>
+        <span>Location: Lat Krabang, Bangkok, Thailand</span>
+        <span>Updated: July 2026</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <p class="section-kicker">Professional Overview</p>
+      <h2 class="section-title">Profile & Leadership Positioning</h2>
+      <div class="intro-grid">
+        <div class="profile-copy">
+          <p>Khant Phyo Wai is an AI and Computer Engineering student at CMKL University with experience across applied AI, data analysis, experimental system development, and early-stage startup operations. His work connects technical execution with strategy: building prototypes, analyzing markets, coordinating stakeholders, and translating product decisions into financial and operational plans.</p>
+          <p>As Co-Founder and Chief Financial Officer of SONAR AI CO., LTD., he contributes to an AI-driven audiobook platform focused on accessible reading experiences for visually impaired users. His role combines financial modeling, pricing strategy, product feasibility, partnership development, and coordination between engineering, design, and non-technical stakeholders.</p>
+          <p>Across academic, startup, and industry environments, his portfolio reflects a practical interest in AI systems that can be deployed, tested, communicated, and connected to real users. He is especially focused on computer vision, generative AI, data-driven decision-making, accessibility, strategic planning, and multidisciplinary leadership.</p>
+        </div>
+        <aside class="panel">
+          <h3>Core Value Proposition</h3>
+          <p>Applied AI builder with a business strategy lens: able to contribute technical implementation, analyze data and markets, organize cross-functional work, and communicate complex systems clearly to stakeholders.</p>
+          <h3>Education</h3>
+          <p>CMKL University, AI and Computer Engineering, expected Spring 2027. Cumulative QPA: 3.8/4.0.</p>
+          <h3>Languages</h3>
+          <p>Burmese: Native. English: Advanced. Thai: Beginner. Mandarin: Beginner.</p>
+        </aside>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <h3>AI & Technical Systems</h3>
+          <p>Machine learning, deep learning, computer vision, OCR, text-to-speech, information retrieval, predictive modeling, experimental prototyping, and model evaluation.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Data & Analytics</h3>
+          <p>SQL, Python, data exploration, trend identification, feature engineering, reporting workflows, and analytical support for decision-making.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Leadership & Management</h3>
+          <p>Project management, cross-functional coordination, stakeholder communication, documentation, team alignment, and delivery planning across technical and business roles.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Strategy & Product</h3>
+          <p>Financial modeling, pricing analysis, market feasibility, go-to-market planning, product-market fit exploration, user research, and presentation development.</p>
+        </div>
+      </div>
+      <div class="footer-note"><span>Khant Phyo Wai | Formal Portfolio</span><span>01</span></div>
+    </section>
+
+    <section class="page">
+      <p class="section-kicker">Experience</p>
+      <h2 class="section-title">Relevant Professional Experience</h2>
+      <div class="timeline">
+        <article class="role">
+          <div class="role-header">
+            <div>
+              <h3>Co-Founder & Chief Financial Officer</h3>
+              <p class="role-company">SONAR AI CO., LTD.</p>
+            </div>
+            <span class="role-date">June 2025 - Present</span>
+          </div>
+          <ul>
+            <li>Co-founded an AI audiobook startup focused on scalable book-to-audio conversion and improved accessibility for visually impaired readers.</li>
+            <li>Lead financial planning, pricing analysis, unit economics, investor-facing materials, and strategic decision support for early product development.</li>
+            <li>Coordinate between engineering, design, business, and external stakeholders to align product capability, accessibility goals, and market constraints.</li>
+            <li>Support go-to-market planning for accessibility communities, libraries, schools, and educational institutions across Southeast Asia.</li>
+            <li>Represent the venture in showcases and competitions, contributing to awards, external visibility, and partnership conversations.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-header">
+            <div>
+              <h3>NOC Data Analyst Intern</h3>
+              <p class="role-company">Agoda Services Co., Ltd.</p>
+            </div>
+            <span class="role-date">May 2025 - Aug 2025</span>
+          </div>
+          <ul>
+            <li>Supported analysis of large-scale operational and product datasets for reporting, internal decision-making, and workflow visibility.</li>
+            <li>Developed a pipeline to organize and analyze quarter-over-quarter operational data using AI models within the NOC department.</li>
+            <li>Explored data trends, operational patterns, and reporting needs in a production-scale corporate environment.</li>
+            <li>Collaborated with cross-functional teams and improved communication between technical and non-technical stakeholders.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-header">
+            <div>
+              <h3>AI / Software Engineer Apprentice</h3>
+              <p class="role-company">CMKL University</p>
+            </div>
+            <span class="role-date">April 2024 - Present</span>
+          </div>
+          <ul>
+            <li>Developed and tested AI-driven systems involving machine learning, computer vision, and interactive prototypes.</li>
+            <li>Balanced experimentation with delivery requirements across multiple project timelines and research-style workflows.</li>
+            <li>Supported validation, iteration, technical documentation, and project communication for multidisciplinary AI projects.</li>
+            <li>Contributed business and financial analysis to connect technical decisions with broader project strategy.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-header">
+            <div>
+              <h3>AI-Centric Designer Intern</h3>
+              <p class="role-company">CMKL University</p>
+            </div>
+            <span class="role-date">April 2024 - Aug 2024</span>
+          </div>
+          <ul>
+            <li>Experimented with generative and image-based AI models for creative system prototyping and game development workflows.</li>
+            <li>Designed controlled experiments to test model parameters, outputs, performance tradeoffs, and practical integration constraints.</li>
+            <li>Worked with engineers to convert AI outputs into functional prototypes and process improvements.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-header">
+            <div>
+              <h3>Web Developer</h3>
+              <p class="role-company">Freelance / Self-Employed</p>
+            </div>
+            <span class="role-date">Jan 2023 - Present</span>
+          </div>
+          <ul>
+            <li>Develop responsive websites and web applications tailored to client needs, with attention to usability, clarity, and visual presentation.</li>
+            <li>Collaborate directly with clients to translate goals into UI/UX decisions, technical scope, and implementation plans.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="footer-note"><span>Khant Phyo Wai | Formal Portfolio</span><span>02</span></div>
+    </section>
+
+    <section class="page">
+      <p class="section-kicker">Startup Venture</p>
+      <h2 class="section-title">SONAR AI CO., LTD.</h2>
+      <div class="venture">
+        <img src="../images/Sonar.webp" alt="SONAR Audiobooks project image">
+        <div>
+          <p>SONAR is an AI audiobook platform built to transform physical books into natural-sounding audio experiences. The venture focuses on accessibility, content conversion, and inclusive product design, especially for blind and visually impaired users.</p>
+          <p>Khant's contribution sits at the intersection of startup strategy and technical execution. He supports financial and operational planning while staying close to product feasibility, accessibility requirements, user needs, and engineering constraints.</p>
+          <div class="summary-list">
+            <div class="summary-item"><strong>Leadership:</strong> Co-founded the company and helps coordinate business, engineering, design, and external-facing workstreams.</div>
+            <div class="summary-item"><strong>Strategy:</strong> Developed financial projections, pricing assumptions, market feasibility analysis, and go-to-market direction for accessibility, library, and education channels.</div>
+            <div class="summary-item"><strong>AI Product Work:</strong> Contributed to OCR post-processing, audio generation workflows, OpenCV-based guidance, and book-tracking concepts for practical user interaction.</div>
+            <div class="summary-item"><strong>Stakeholder Management:</strong> Helped prepare presentations, partnership narratives, and showcase materials for competitions, institutions, and non-technical audiences.</div>
+          </div>
+        </div>
+      </div>
+      <h2 class="section-title" style="margin-top: 18px;">Project Responsibilities</h2>
+      <div class="two-column">
+        <div>
+          <p class="section-kicker">Business & Operations</p>
+          <ul class="compact-list">
+            <li>Built financial models to estimate production economics, pricing structures, and operating assumptions.</li>
+            <li>Translated customer and accessibility needs into business requirements for product prioritization.</li>
+            <li>Supported market positioning for a platform that can reduce friction in audiobook creation and distribution.</li>
+            <li>Prepared strategic documentation and presentations for competitions, showcases, and partnership development.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="section-kicker">Technical & Product</p>
+          <ul class="compact-list">
+            <li>Worked with OCR, computer vision, and audio generation workflows to support the core product pipeline.</li>
+            <li>Helped refine an accessible interaction flow for scanning, detecting, tracking, and converting physical books.</li>
+            <li>Collaborated with technical teammates to understand engineering tradeoffs and communicate practical constraints.</li>
+            <li>Contributed to a demo website and user-facing presentation layer for the SONAR Audiobooks platform.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-note"><span>Khant Phyo Wai | Formal Portfolio</span><span>03</span></div>
+    </section>
+
+    <section class="page">
+      <p class="section-kicker">Selected Work</p>
+      <h2 class="section-title">Applied AI & Strategy Projects</h2>
+      <div class="case-grid">
+        <article class="case-card">
+          <img src="../images/404.webp" alt="Mirror Relexion AI project">
+          <div class="case-body">
+            <h3>Mirror Relexion AI</h3>
+            <p class="case-meta">Real-time AI installation | Computer vision | Generative AI</p>
+            <p>Built a real-time interactive visual system using TouchDesigner, computer vision, StreamDiffusion, ControlNet, and diffusion model workflows. The installation responds to live camera input and human movement, turning viewer behavior into dynamic AI-generated visuals.</p>
+            <ul>
+              <li>Designed the interaction pipeline, motion response logic, and visual direction for live deployment contexts.</li>
+              <li>Balanced creative goals with system constraints, model latency, camera input quality, and event reliability.</li>
+              <li>Created deployment variations for live events and summit-style presentation environments.</li>
+            </ul>
+            <div class="tags"><span class="tag">TouchDesigner</span><span class="tag">Stable Diffusion</span><span class="tag">OpenCV</span><span class="tag">Python</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="../images/harmony.webp" alt="Harmony Vision AR guitar project">
+          <div class="case-body">
+            <h3>Harmony Vision</h3>
+            <p class="case-meta">AR learning system | User research | AI interaction</p>
+            <p>Designed an AR-powered guitar training concept that delivers visual guidance and feedback for beginner and intermediate learners. The project explored how computer vision and interactive overlays could make practice more intuitive.</p>
+            <ul>
+              <li>Conducted user research to identify adoption barriers, learner needs, and feature priorities.</li>
+              <li>Explored technical feasibility using Unity, gesture tracking, C#, Arduino, and Python workflows.</li>
+              <li>Connected product strategy with education use cases and potential partnerships with music educators.</li>
+            </ul>
+            <div class="tags"><span class="tag">Unity3D</span><span class="tag">PyTorch</span><span class="tag">C#</span><span class="tag">User Research</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="../images/MHTN .webp" alt="Thai Neighbourhood project">
+          <div class="case-body">
+            <h3>Thai Neighbourhood</h3>
+            <p class="case-meta">Community strategy | Data analytics | Economic development</p>
+            <p>Contributed to a technology-driven community development initiative under CMKL University's R&D program, focused on sustainable local business growth, digital adoption, and cultural preservation.</p>
+            <ul>
+              <li>Designed financial projections and strategic planning materials for long-term project viability.</li>
+              <li>Used AI and data analytics concepts to assess economic patterns, community needs, and resource planning.</li>
+              <li>Coordinated across entrepreneurs, researchers, community members, and institutional stakeholders.</li>
+            </ul>
+            <div class="tags"><span class="tag">Financial Modeling</span><span class="tag">Predictive Analytics</span><span class="tag">Strategy</span><span class="tag">Community</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="../images/elevator.png" alt="AI-Levator project">
+          <div class="case-body">
+            <h3>AI-Levator</h3>
+            <p class="case-meta">Digital twin | Reinforcement learning | SaaS planning</p>
+            <p>Developed an AI-driven elevator optimization concept that uses predictive modeling and digital twin simulation to reduce wait times, optimize dispatching, and improve energy efficiency in high-rise buildings.</p>
+            <ul>
+              <li>Explored reinforcement learning and simulation workflows for elevator scheduling and performance testing.</li>
+              <li>Built business-case materials around SaaS modeling, operational savings, and deployment feasibility.</li>
+              <li>Coordinated technical, building operations, and business considerations into a coherent product narrative.</li>
+            </ul>
+            <div class="tags"><span class="tag">TensorFlow</span><span class="tag">Python</span><span class="tag">Digital Twin</span><span class="tag">AWS</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="footer-note"><span>Khant Phyo Wai | Formal Portfolio</span><span>04</span></div>
+    </section>
+
+    <section class="page">
+      <p class="section-kicker">Additional Projects</p>
+      <h2 class="section-title">AI, NLP & Web Implementation</h2>
+      <div class="case-grid">
+        <article class="case-card">
+          <img src="../images/fallacy.png" alt="Fallacy Hunter project">
+          <div class="case-body">
+            <h3>Fallacy Hunter</h3>
+            <p class="case-meta">NLP | Text analysis | Educational technology</p>
+            <p>Designed an AI-powered NLP tool concept for detecting logical fallacies in written arguments and helping users improve critical thinking.</p>
+            <ul>
+              <li>Explored transformer-based classification for common fallacy categories and explanatory feedback.</li>
+              <li>Considered education, debate training, and learning management system integration as target markets.</li>
+              <li>Structured the project around iterative model improvement and user-facing explanations.</li>
+            </ul>
+            <div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">Flask</span><span class="tag">React</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="../images/web-sonar.png" alt="Sonar Audiobooks website">
+          <div class="case-body">
+            <h3>Sonar Audiobooks Website</h3>
+            <p class="case-meta">Product website | AI storytelling | Accessibility</p>
+            <p>Built a web presence for SONAR Audiobooks to communicate the platform's AI conversion workflow, accessibility mission, and product value to partners and potential users.</p>
+            <ul>
+              <li>Translated technical capabilities into approachable public-facing messaging.</li>
+              <li>Supported product credibility through a clear website, demo narrative, and visual presentation.</li>
+              <li>Connected business development needs with user-facing web implementation.</li>
+            </ul>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">AI Integration</span><span class="tag">Accessibility</span></div>
+          </div>
+        </article>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 18px;">Web Portfolio & Client Work</h2>
+      <div class="web-list">
+        <article class="web-item">
+          <img src="../images/web-connected.png" alt="ConnectEd PHM">
+          <div>
+            <h3>ConnectEd PHM</h3>
+            <p>Educational platform with interactive learning resources and student management capabilities.</p>
+            <p><strong>Contribution:</strong> Implemented responsive web structure and learning-focused user flows.</p>
+          </div>
+        </article>
+        <article class="web-item">
+          <img src="../images/web-simpal.png" alt="Simpal Clothing">
+          <div>
+            <h3>Simpal Clothing</h3>
+            <p>E-commerce website for a clothing brand with product catalog and shopping functionality.</p>
+            <p><strong>Contribution:</strong> Developed a clean product presentation layer with responsive UI decisions.</p>
+          </div>
+        </article>
+        <article class="web-item">
+          <img src="../images/web-lab404.png" alt="Lab 404">
+          <div>
+            <h3>Lab 404</h3>
+            <p>Research lab website featuring project showcases, team profiles, and publication-style content.</p>
+            <p><strong>Contribution:</strong> Supported content strategy, project presentation, and public-facing research communication.</p>
+          </div>
+        </article>
+      </div>
+      <div class="footer-note"><span>Khant Phyo Wai | Formal Portfolio</span><span>05</span></div>
+    </section>
+
+    <section class="page">
+      <p class="section-kicker">Credentials</p>
+      <h2 class="section-title">Education, Certifications & Closing Summary</h2>
+      <div class="two-column">
+        <div>
+          <h3>Education</h3>
+          <ul class="compact-list">
+            <li>CMKL University, AI and Computer Engineering, expected Spring 2027.</li>
+            <li>Cumulative QPA: 3.8/4.0.</li>
+            <li>Notable coursework: Neural Networks, Deep Learning, Information Retrieval, AI Applications, Linear Algebra, and Inference Statistics.</li>
+          </ul>
+
+          <h3 style="margin-top: 16px;">Certifications</h3>
+          <ul class="compact-list">
+            <li>Character Design for Video Games, California Institute of the Arts.</li>
+            <li>Graphic Design, University of Colorado Boulder.</li>
+            <li>Technical Support Fundamentals, Google.</li>
+            <li>Introduction to Social Media Marketing, Meta.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Technical Stack</h3>
+          <ul class="compact-list">
+            <li>Programming: Python, SQL, Java, C, HTML, CSS, JavaScript, React.</li>
+            <li>AI and data: machine learning, computer vision, NLP, OCR, TTS, information retrieval, statistics, predictive modeling.</li>
+            <li>Creative and prototyping: TouchDesigner, Unity, Unreal Engine, Blender, Figma, data visualization, UI/UX design.</li>
+            <li>Business and management: financial modeling, market analysis, strategy, stakeholder communication, documentation, presentation, and project management.</li>
+          </ul>
+
+          <h3 style="margin-top: 16px;">Leadership Summary</h3>
+          <p>Khant's portfolio demonstrates a developing leadership profile centered on applied AI, accessibility, and commercially aware technical work. He has operated as a founder, analyst, apprentice engineer, designer, and freelance developer, giving him experience in both building systems and coordinating the people, data, constraints, and strategy around them.</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top: 18px;">
+        <h3>Portfolio Focus</h3>
+        <p>This portfolio is positioned for opportunities that value AI implementation, data analysis, product thinking, cross-functional coordination, and strategic communication. It highlights not only project outputs, but also Khant's role in shaping feasibility, execution, stakeholder alignment, and business direction.</p>
+      </div>
+
+      <div class="contact-bar" style="margin-top: 28px; color: #2f3d46; border-top-color: #dbe2e1;">
+        <span>Email: kelvinwai.khantphyo@gmail.com</span>
+        <span>Phone: +66 92 091 0228</span>
+        <span>LinkedIn: linkedin.com/in/khant-phyo-wai</span>
+        <span>Portfolio: khantphyowai.vercel.app</span>
+      </div>
+      <div class="footer-note"><span>Khant Phyo Wai | Formal Portfolio</span><span>06</span></div>
+    </section>
+  </main>
+</body>
+</html>

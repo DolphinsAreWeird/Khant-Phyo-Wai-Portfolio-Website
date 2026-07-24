@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Khant Phyo Wai — Portfolio</title>
+<style>
+
+
+@page {
+    size: A4;
+    margin: 0;
+}
+@page content {
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-left {
+        content: "Khant Phyo Wai — Portfolio";
+        font-family: 'Arial', Helvetica, sans-serif;
+        font-size: 8pt;
+        color: #9c9184;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+    @bottom-right {
+        content: counter(page) " / " counter(pages);
+        font-family: 'Arial', Helvetica, sans-serif;
+        font-size: 8pt;
+        color: #9c9184;
+    }
+}
+@page cover {
+    margin: 0;
+}
+
+* { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0;
+    font-family: 'Arial', Helvetica, sans-serif;
+    color: #1B1712;
+    font-size: 10.3pt;
+    line-height: 1.55;
+    background: #FFFFFF;
+}
+h1, h2, h3, h4 {
+    font-family: 'Arial', Helvetica, sans-serif;
+    margin: 0;
+    color: #1B1712;
+}
+p { margin: 0 0 8px 0; }
+a { color: #C9481E; text-decoration: none; }
+
+.section {
+    page: content;
+}
+.section + .section {
+    break-before: page;
+}
+/* @page margins only apply when printing/exporting to PDF; give sections
+   their own inset too so the raw HTML doesn't render edge-to-edge on screen. */
+@media screen {
+    .section {
+        max-width: 210mm;
+        margin: 0 auto;
+        padding: 20mm 18mm 22mm 18mm;
+        box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    }
+    .cover, .closing { margin: 0 auto; }
+}
+.strength-card, .exp-item, .project-card, .skill-card, .edu-block, .spotlight, .earlier-table {
+    break-inside: avoid;
+}
+.earlier-row { break-inside: avoid; }
+
+/* ---------- COVER ---------- */
+.cover {
+    page: cover;
+    width: 210mm; height: 297mm;
+    background: #1B1712;
+    color: #F6F1E7;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22mm 20mm;
+}
+.cover-top { display: flex; justify-content: flex-start; align-items: flex-start; }
+.cover-kicker {
+    font-size: 9.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #EE5B2B;
+    font-weight: 600;
+}
+.cover-mid { margin-top: 8mm; }
+.cover-name {
+    font-size: 46pt;
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+}
+.cover-name span { color: #EE5B2B; }
+.cover-role {
+    margin-top: 7mm;
+    font-size: 13pt;
+    color: #EDE4D2;
+    font-weight: 500;
+    max-width: 140mm;
+    line-height: 1.5;
+}
+.cover-tagline {
+    margin-top: 6mm;
+    font-size: 10.5pt;
+    color: #b8ad9c;
+    max-width: 130mm;
+    border-left: 2px solid #EE5B2B;
+    padding-left: 5mm;
+}
+.cover-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 6mm;
+    border-top: 1px solid #3a332a;
+    padding-top: 6mm;
+}
+.cover-contact { font-size: 9.5pt; color: #cfc6b8; line-height: 1.9; }
+.cover-contact strong { color: #F6F1E7; font-weight: 600; }
+.cover-stats { display: flex; gap: 16mm; }
+.cover-stat { text-align: left; }
+.cover-stat .num { font-family: 'Arial', Helvetica, sans-serif; font-size: 20pt; font-weight: 700; color: #EE5B2B; display: block; }
+.cover-stat .lbl { font-size: 7.8pt; color: #b8ad9c; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ---------- SECTION HEADERS ---------- */
+.kicker {
+    font-size: 9pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #C9481E;
+    font-weight: 700;
+    margin-bottom: 3mm;
+}
+.title {
+    font-size: 21pt;
+    font-weight: 700;
+    margin-bottom: 6mm;
+    padding-bottom: 3mm;
+    border-bottom: 1.5px solid #E4D9C4;
+}
+.title .dot { color: #EE5B2B; }
+
+/* ---------- PROFILE ---------- */
+.summary {
+    font-size: 10.3pt;
+    line-height: 1.55;
+    margin-bottom: 5mm;
+}
+.strengths-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4mm;
+    margin: 4mm 0;
+}
+.strength-card {
+    background: #FFFFFF;
+    border: 1px solid #EAE0CC;
+    border-radius: 3mm;
+    padding: 6mm;
+    width: 47%;
+}
+.strength-card h4 {
+    font-size: 10pt;
+    color: #C9481E;
+    margin-bottom: 1.5mm;
+}
+.strength-card p { font-size: 9pt; margin: 0; color: #3a3229; line-height: 1.45; }
+
+.stats-row {
+    display: flex;
+    gap: 6mm;
+    margin: 5mm 0 2mm 0;
+    padding: 4mm 0;
+    border-top: 1px solid #E4D9C4;
+    border-bottom: 1px solid #E4D9C4;
+}
+.stats-row .stat { flex: 1; text-align: center; }
+.stats-row .stat .num { font-family: 'Arial', Helvetica, sans-serif; font-size: 19pt; font-weight: 700; color: #1B1712; }
+.stats-row .stat .num span { color: #EE5B2B; }
+.stats-row .stat .lbl { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.05em; color: #7a7062; margin-top: 1mm; }
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-top: 3mm; }
+.pill {
+    background: #EDE4D2;
+    color: #4a4030;
+    font-size: 8.3pt;
+    font-weight: 500;
+    padding: 2.2mm 4.5mm;
+    border-radius: 20px;
+}
+
+/* ---------- EXPERIENCE ---------- */
+.exp-item {
+    display: flex;
+    gap: 6mm;
+    margin-bottom: 6mm;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid #EAE0CC;
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-date {
+    width: 30mm;
+    flex-shrink: 0;
+    font-size: 8.6pt;
+    color: #9c9184;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding-top: 1mm;
+}
+.exp-body { flex: 1; }
+.exp-body h3 { font-size: 12pt; font-weight: 700; }
+.exp-body h4 { font-size: 9.8pt; font-weight: 500; color: #C9481E; margin-bottom: 2mm; }
+.exp-body ul { margin: 2mm 0 3mm 0; padding-left: 4mm; }
+.exp-body li { font-size: 9.5pt; margin-bottom: 1.3mm; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 2mm; }
+.tag {
+    font-size: 7.6pt;
+    background: #F1EAD8;
+    color: #5a4f3d;
+    padding: 1.6mm 3.4mm;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.tag-accent { background: #1B1712; color: #F6F1E7; }
+
+.earlier-table { margin-top: 3mm; }
+.earlier-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.6mm 0;
+    border-bottom: 1px dotted #E4D9C4;
+    font-size: 9.2pt;
+}
+.earlier-row .role { font-weight: 600; }
+.earlier-row .org { color: #7a7062; }
+.earlier-row .date { color: #9c9184; font-size: 8.4pt; white-space: nowrap; }
+
+/* ---------- SONAR SPOTLIGHT ---------- */
+.spotlight {
+    background: #1B1712;
+    color: #F6F1E7;
+    border-radius: 4mm;
+    padding: 10mm;
+    margin-bottom: 6mm;
+}
+.spotlight .kicker { color: #EE5B2B; }
+.spotlight h3 { font-size: 15pt; color: #F6F1E7; margin-bottom: 1mm; }
+.spotlight .org-line { font-size: 9.5pt; color: #EE5B2B; font-weight: 600; margin-bottom: 4mm; }
+.spotlight p { color: #d8cfc0; font-size: 9.8pt; }
+.spotlight-stats { display: flex; gap: 8mm; margin-top: 5mm; border-top: 1px solid #3a332a; padding-top: 4mm; }
+.spotlight-stats .s { flex: 1; }
+.spotlight-stats .s .num { font-family: 'Arial', Helvetica, sans-serif; font-size: 15pt; font-weight: 700; color: #EE5B2B; }
+.spotlight-stats .s .lbl { font-size: 7.6pt; color: #b8ad9c; text-transform: uppercase; }
+
+.role-cols { display: flex; gap: 6mm; margin-top: 2mm; }
+.role-col { flex: 1; }
+.role-col h4 { font-size: 9.6pt; color: #C9481E; margin-bottom: 2mm; }
+.role-col ul { margin: 0; padding-left: 4mm; }
+.role-col li { font-size: 9.3pt; margin-bottom: 1.6mm; }
+
+/* ---------- PROJECTS ---------- */
+.project-card {
+    display: flex;
+    gap: 4mm;
+    margin-bottom: 3mm;
+    padding-bottom: 3mm;
+    border-bottom: 1px solid #EAE0CC;
+}
+.project-card:last-child { border-bottom: none; }
+.project-img {
+    width: 20mm; height: 20mm;
+    border-radius: 2mm;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #EDE4D2;
+}
+.project-img img { width: 100%; height: 100%; object-fit: cover; }
+.project-body { flex: 1; }
+.project-body h3 { font-size: 10.5pt; margin-bottom: 0.5mm; }
+.project-meta { font-size: 7.6pt; color: #9c9184; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 1mm; }
+.project-body p { font-size: 8.6pt; line-height: 1.4; margin-bottom: 0.8mm; }
+.project-body p strong { color: #C9481E; }
+
+/* ---------- SKILLS GRID ---------- */
+.skills-grid { display: block; }
+.skill-card {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #EAE0CC;
+    border-radius: 3mm;
+    padding: 7mm 8mm;
+    margin-bottom: 5mm;
+}
+.skill-card h4 { font-size: 11pt; color: #1B1712; margin-bottom: 1.5mm; }
+.skill-card .role-note { font-size: 8pt; color: #C9481E; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2mm; }
+.skill-card p { font-size: 9.3pt; color: #4a4030; margin-bottom: 2.5mm; }
+
+/* ---------- EDUCATION / CREDENTIALS ---------- */
+.edu-block { background: #FFFFFF; border: 1px solid #EAE0CC; border-radius: 3mm; padding: 8mm; margin-bottom: 6mm; }
+.edu-block h3 { font-size: 13pt; }
+.edu-block .org-line { font-size: 9.8pt; color: #C9481E; font-weight: 600; margin: 1mm 0 3mm 0; }
+.edu-block .meta { font-size: 9pt; color: #7a7062; margin-bottom: 3mm; }
+
+.two-col { display: flex; gap: 8mm; }
+.two-col > div { flex: 1; }
+.cred-list, .lang-list { list-style: none; margin: 0; padding: 0; }
+.cred-list li, .lang-list li {
+    font-size: 9.4pt;
+    padding: 2.6mm 0;
+    border-bottom: 1px dotted #E4D9C4;
+    display: flex; justify-content: space-between;
+}
+.cred-list li .cred-org, .lang-list li .lvl { color: #9c9184; font-size: 8.4pt; }
+
+.subhead { font-size: 9.6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #C9481E; margin: 5mm 0 3mm 0; }
+
+/* ---------- CLOSING ---------- */
+.closing {
+    page: cover;
+    width: 210mm; height: 297mm;
+    background: #1B1712;
+    color: #F6F1E7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20mm;
+}
+.closing .big { font-family: 'Arial', Helvetica, sans-serif; font-size: 30pt; font-weight: 700; margin-bottom: 6mm; }
+.closing .big span { color: #EE5B2B; }
+.closing p { color: #cfc6b8; font-size: 11pt; max-width: 120mm; margin-bottom: 10mm; }
+.closing-contact { display: flex; gap: 12mm; font-size: 10pt; color: #EDE4D2; }
+.closing-contact div { text-align: left; white-space: nowrap; }
+.closing-contact strong { color: #EE5B2B; display: block; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1mm; }
+</style>
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div class="cover">
+    <div class="cover-top">
+        <div class="cover-kicker">AI Engineer &nbsp;·&nbsp; Founder &nbsp;·&nbsp; Strategist</div>
+    </div>
+    <div class="cover-mid">
+        <div class="cover-name">Khant Phyo<br><span>Wai.</span></div>
+        <div class="cover-role">Co-Founder &amp; CFO at Sonar AI. AI/Computer Engineering student at CMKL University. Cross-functional project leader working at the intersection of applied AI, data and business strategy.</div>
+        <div class="cover-tagline">Portfolio &amp; Professional Profile, 2026: engineering, leadership and business highlights across startup, enterprise and research environments.</div>
+    </div>
+    <div class="cover-bottom">
+        <div class="cover-contact">
+            <strong>Email</strong> kelvinwai.khantphyo@gmail.com<br>
+            <strong>Phone</strong> +66 92 091 0228 &nbsp;·&nbsp; <strong>Location</strong> Bangkok, Thailand<br>
+            <strong>Web</strong> khantphyowai.vercel.app &nbsp;·&nbsp; <strong>LinkedIn</strong> /in/khant-phyo-wai
+        </div>
+        <div class="cover-stats">
+            <div class="cover-stat"><span class="num">3.8</span><span class="lbl">QPA / 4.0</span></div>
+            <div class="cover-stat"><span class="num">12+</span><span class="lbl">Projects</span></div>
+            <div class="cover-stat"><span class="num">1</span><span class="lbl">Startup Founded</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== PROFILE ===================== -->
+<div class="section">
+    <p class="kicker">01 · Profile</p>
+    <h2 class="title">Executive summary<span class="dot">.</span></h2>
+
+    <p class="summary">I'm an AI and Computer Engineering student at CMKL University (QPA 3.8/4.0) and Co-Founder &amp; Chief Financial Officer of <strong>Sonar AI</strong>, a startup applying computer vision and generative AI to convert physical books into studio-quality audiobooks. I work at the intersection of applied AI engineering, data analysis and business strategy, and have repeatedly stepped into leadership roles that require coordinating engineers, designers and business stakeholders toward a single delivery. My experience spans startup founding, enterprise data operations at Agoda, cross-functional project leadership at True Alpha, and applied AI research at CMKL University.</p>
+
+    <p class="summary">I'm most effective where technical execution meets business decision-making: building financial models and go-to-market plans, designing machine learning and computer vision pipelines, and translating both into a coherent strategy that a mixed technical and non-technical team can act on.</p>
+
+    <div class="strengths-grid">
+        <div class="strength-card">
+            <h4>Leadership &amp; Cross-Functional Management</h4>
+            <p>Led a cross-functional intern team spanning engineering, design and business at True Alpha, owning planning, delegation and delivery. Co-founded and now helps run Sonar AI end to end across the same three functions.</p>
+        </div>
+        <div class="strength-card">
+            <h4>Strategy &amp; Business</h4>
+            <p>Owns financial modeling, pricing strategy, unit economics and go-to-market planning at Sonar AI; has built business cases and market feasibility studies for five academic and startup ventures.</p>
+        </div>
+        <div class="strength-card">
+            <h4>Data &amp; AI</h4>
+            <p>Hands-on with computer vision, OCR, TTS, machine learning pipelines and large-scale operational data analysis, from Agoda's NOC data pipelines to Sonar AI's production book-scanning system.</p>
+        </div>
+        <div class="strength-card">
+            <h4>Communication &amp; Stakeholder Management</h4>
+            <p>Presents technical work and business cases to company leadership and investors; coordinates between technical and non-technical stakeholders as a matter of routine, not exception.</p>
+        </div>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat"><div class="num"><span>3</span></div><div class="lbl">Fully-Funded Scholarships</div></div>
+        <div class="stat"><div class="num"><span>12</span></div><div class="lbl">Projects Delivered</div></div>
+        <div class="stat"><div class="num">3.8</div><div class="lbl">QPA / 4.0</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">Languages</div></div>
+    </div>
+</div>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<div class="section">
+    <p class="kicker">02 · Professional Experience</p>
+    <h2 class="title">Where I've worked<span class="dot">.</span></h2>
+
+    <div class="exp-item">
+        <div class="exp-date">Jun 2026 &ndash;<br>Jul 2026</div>
+        <div class="exp-body">
+            <h3>Project Leader (Internship)</h3>
+            <h4>True Alpha</h4>
+            <ul>
+                <li>Led a cross-functional intern team spanning engineering, design and business as Project Leader, owning planning, task delegation and final delivery end to end.</li>
+                <li>Ran sprint cycles and stakeholder check-ins, translating mentor and leadership feedback into actionable tasks across workstreams.</li>
+                <li>Presented the final project to company leadership, covering both the technical implementation and the business case behind it.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag tag-accent">Project Leadership</span><span class="tag">Cross-Functional Teams</span><span class="tag">Sprint Planning</span><span class="tag">Stakeholder Communication</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-date">Jun 2025 &ndash;<br>Present</div>
+        <div class="exp-body">
+            <h3>Co-Founder &amp; Chief Financial Officer</h3>
+            <h4>Sonar AI Co., Ltd.</h4>
+            <ul>
+                <li>Co-founded and scaled an AI audiobook platform that converts physical books into studio-quality narration using computer vision, OCR and text-to-speech, at under 10% of traditional production cost.</li>
+                <li>Own all financial operations: P&amp;L management, pricing strategy, unit economics modeling and investor-facing materials.</li>
+                <li>Drove go-to-market planning targeting accessibility communities, libraries and educational institutions across Southeast Asia.</li>
+                <li>Received multiple awards at national and international showcases; represented the company at industry competitions.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag tag-accent">Financial Modeling</span><span class="tag">Business Strategy</span><span class="tag">Startup Operations</span><span class="tag">Stakeholder Management</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-date">May 2025 &ndash;<br>Aug 2025</div>
+        <div class="exp-body">
+            <h3>NOC Data Analyst (Internship)</h3>
+            <h4>Agoda Services Co., Ltd.</h4>
+            <ul>
+                <li>Built a pipeline to organise and analyse quarter-over-quarter operational data using AI models within the Network Operations Center.</li>
+                <li>Supported analysis of large-scale operational and product datasets for internal reporting and decision-making.</li>
+                <li>Collaborated across cross-functional teams, improving communication between technical and non-technical roles inside a production-scale corporate environment.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag tag-accent">Data Analysis</span><span class="tag">Pipeline Development</span><span class="tag">Cross-Functional Teams</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-date">Apr 2024 &ndash;<br>Present</div>
+        <div class="exp-body">
+            <h3>AI / Software Engineer (Apprenticeship)</h3>
+            <h4>CMKL University</h4>
+            <ul>
+                <li>Developed and tested AI-driven systems involving machine learning and computer vision.</li>
+                <li>Managed multiple project timelines in parallel, balancing experimentation with deliverable requirements.</li>
+                <li>Supported research-style workflows emphasising iteration, validation and documentation.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag tag-accent">Machine Learning</span><span class="tag">Computer Vision</span><span class="tag">Research &amp; Iteration</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="subhead">Earlier Experience</p>
+    <div class="earlier-table">
+        <div class="earlier-row"><span class="role">AI-Centric Designer (Internship)</span><span class="org">CMKL University</span><span class="date">Apr 2024 &ndash; Aug 2024</span></div>
+        <div class="earlier-row"><span class="role">Web Developer (Freelance)</span><span class="org">Self-Employed</span><span class="date">Jan 2023 &ndash; Present</span></div>
+        <div class="earlier-row"><span class="role">Marketing &amp; Copywriting Intern</span><span class="org">Connected Pathways Hub Myanmar</span><span class="date">Jul 2023 &ndash; Dec 2023</span></div>
+        <div class="earlier-row"><span class="role">Assistant Teacher</span><span class="org">Teacher Su International School</span><span class="date">Dec 2021 &ndash; Dec 2023</span></div>
+    </div>
+</div>
+
+<!-- ===================== SONAR SPOTLIGHT ===================== -->
+<div class="section">
+    <p class="kicker">03 · Startup Spotlight</p>
+    <h2 class="title">Sonar AI<span class="dot">.</span></h2>
+
+    <div class="spotlight">
+        <p class="kicker">Co-Founded June 2025</p>
+        <h3>Sonar AI Co., Ltd.</h3>
+        <div class="org-line">Co-Founder &amp; Chief Financial Officer</div>
+        <p>Sonar AI is a startup using computer vision and generative AI to transform physical books into professional, studio-quality audiobooks, at a fraction of traditional production cost. The team built its own OCR pipeline, text-to-speech synthesis and book-scanning system from the ground up, purpose-built for accessibility: the platform's first and primary use case is giving visually impaired readers access to books that were never produced in audio form. The venture has won multiple awards at national and international showcases and competitions.</p>
+
+        <div class="role-cols">
+            <div class="role-col">
+                <h4>My Role: Strategy &amp; Finance</h4>
+                <ul>
+                    <li>Own financial modeling, pricing strategy and unit economics for the platform.</li>
+                    <li>Lead market and feasibility analysis to guide product and pricing decisions.</li>
+                    <li>Drive go-to-market planning across accessibility communities, libraries and educational institutions in Southeast Asia.</li>
+                    <li>Prepare investor-facing materials and represent the company at competitions and showcases.</li>
+                </ul>
+            </div>
+            <div class="role-col">
+                <h4>Cross-Functional Coordination</h4>
+                <ul>
+                    <li>Work closely with engineers and designers daily to align technical capabilities with business constraints and market needs.</li>
+                    <li>Bridge technical, creative and non-technical stakeholders across a small, high-context founding team.</li>
+                    <li>Balance product roadmap against runway, pricing and go-to-market realities.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="spotlight-stats">
+            <div class="s"><div class="num">&lt;10%</div><div class="lbl">of Traditional Production Cost</div></div>
+            <div class="s"><div class="num">Multiple</div><div class="lbl">Awards &amp; Showcases</div></div>
+            <div class="s"><div class="num">SEA-Wide</div><div class="lbl">Go-to-Market Focus</div></div>
+        </div>
+    </div>
+
+    <p style="font-size:9.3pt; color:#7a7062;">Live product: <a href="https://sonaraudiobooks.com/">sonaraudiobooks.com</a></p>
+</div>
+
+<!-- ===================== PROJECTS ===================== -->
+<div class="section">
+    <p class="kicker">04 · Featured Projects</p>
+    <h2 class="title">Selected work<span class="dot">.</span></h2>
+
+    <div class="project-card">
+        <div class="project-img"><img src="mirror.webp" alt="Mirror Relexion AI"></div>
+        <div class="project-body">
+            <h3>Mirror Relexion AI</h3>
+            <div class="project-meta">CMKL University &middot; Jul 2025 &ndash; Present &middot; AI, Computer Vision, Generative Art</div>
+            <p>A real-time interactive visual installation mirroring and transforming human movement with live computer vision and diffusion models, deployed at live events and summits.</p>
+            <p><strong>Built:</strong> a TouchDesigner pipeline with StreamDiffusion and ControlNet, turning live camera and pose data into stylised real-time visuals.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-img"><img src="sonarbooks.webp" alt="SonarAudiobooks"></div>
+        <div class="project-body">
+            <h3>SonarAudiobooks</h3>
+            <div class="project-meta">Sonar AI &middot; Jul 2024 &ndash; Present &middot; AI, Accessibility, Business</div>
+            <p>An AI platform converting physical books into audiobooks for visually impaired users, the technical and commercial foundation of Sonar AI.</p>
+            <p><strong>Built:</strong> a custom OCR pipeline, high-accuracy text-to-speech, and real-time book scanning via computer vision.</p>
+            <p><strong>Led:</strong> go-to-market strategy across accessibility communities, libraries and educational institutions.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-img"><img src="harmony.webp" alt="Harmony Vision"></div>
+        <div class="project-body">
+            <h3>Harmony Vision</h3>
+            <div class="project-meta">CMKL University &middot; Jul 2023 &ndash; Apr 2024 &middot; AR, AI, Interaction Design</div>
+            <p>An AR-powered guitar training platform giving real-time visual guidance through AI gesture recognition.</p>
+            <p><strong>Led:</strong> user research with beginner and intermediate players, exploring partnerships with music educators and AR hardware providers.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-img"><img src="mhtn.webp" alt="Thai Neighbourhood"></div>
+        <div class="project-body">
+            <h3>Thai Neighbourhood</h3>
+            <div class="project-meta">CMKL University R&amp;D Program &middot; Interactive Fiction, Game Design, Team Leadership</div>
+            <p>A webtoon-style interactive game teaching players to recognise common scam scenarios in Thailand through branching decision trees and multiple characters.</p>
+            <p><strong>Led:</strong> a cross-functional team of artists, engineers and AI specialists from concept through delivery, uniting narrative, art and technical execution.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-img"><img src="elevator-opt.webp" alt="AI-Levator"></div>
+        <div class="project-body">
+            <h3>AI-Levator</h3>
+            <div class="project-meta">CMKL University &middot; AI, Digital Twin, Business Plan</div>
+            <p>An AI-driven elevator optimisation system reducing wait times and energy use by predicting peak usage and dynamically adjusting dispatching.</p>
+            <p><strong>Built:</strong> reinforcement learning and digital twin simulations for elevator scheduling, modeled as a B2B SaaS case showing 30% energy savings and 40% faster wait times.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================== SKILLS ===================== -->
+<div class="section">
+    <p class="kicker">05 · Skills &amp; Expertise</p>
+    <h2 class="title">What I do<span class="dot">.</span></h2>
+
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="role-note">Primary focus</div>
+            <h4>AI &amp; Data Science</h4>
+            <p>Building applied AI systems end to end: computer vision pipelines, NLP models, machine learning, and data analysis, from research prototypes to production systems.</p>
+            <div class="pill-row">
+                <span class="pill">Computer Vision</span><span class="pill">Machine Learning</span><span class="pill">NLP &amp; LLMs</span><span class="pill">OCR</span><span class="pill">TTS</span><span class="pill">PyTorch</span><span class="pill">HuggingFace</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="role-note">Primary focus</div>
+            <h4>Business, Strategy &amp; Finance</h4>
+            <p>From startup CFO to strategy lead across five ventures, building financial models, go-to-market plans and data-driven business cases.</p>
+            <div class="pill-row">
+                <span class="pill">Financial Modeling</span><span class="pill">Unit Economics</span><span class="pill">Market Analysis</span><span class="pill">Go-to-Market</span><span class="pill">Pricing Strategy</span><span class="pill">Stakeholder Management</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <h4>Leadership &amp; Project Management</h4>
+            <p>Leading cross-functional teams across engineering, design and business, from intern-team sprints at True Alpha to running Sonar AI's founding team.</p>
+            <div class="pill-row">
+                <span class="pill">Project Leadership</span><span class="pill">Sprint Planning</span><span class="pill">Cross-Functional Teams</span><span class="pill">Stakeholder Communication</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="two-col">
+                <div>
+                    <h4>Creative, Design &amp; Web Development</h4>
+                    <p>Building engaging content, immersive experiences and functional web applications, supporting both product and business needs.</p>
+                    <div class="pill-row">
+                        <span class="pill">React</span><span class="pill">JavaScript</span><span class="pill">Figma</span><span class="pill">TouchDesigner</span><span class="pill">UX Design</span><span class="pill">Unity3D</span>
+                    </div>
+                </div>
+                <div>
+                    <h4>Education &amp; Teaching</h4>
+                    <p>Helping students grow through personalised instruction, curriculum development and exam preparation, alongside AI literacy workshops.</p>
+                    <div class="pill-row">
+                        <span class="pill">Curriculum Design</span><span class="pill">Mathematics</span><span class="pill">GED Prep</span><span class="pill">Workshops</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== EDUCATION / CREDENTIALS ===================== -->
+<div class="section">
+    <p class="kicker">06 · Education</p>
+    <h2 class="title">Foundation<span class="dot">.</span></h2>
+
+    <div class="edu-block">
+        <h3>AI and Computer Engineering, B.Eng.</h3>
+        <div class="org-line">CMKL University &middot; Expected Spring 2027</div>
+        <div class="meta">Cumulative QPA: 3.8 / 4.0</div>
+        <p style="font-size:9.4pt;">Notable coursework: Neural Networks, Deep Learning, Information Retrieval, AI Applications, Linear Algebra, Inference Statistics.</p>
+    </div>
+
+    <div class="two-col">
+        <div>
+            <p class="subhead">Languages</p>
+            <ul class="lang-list">
+                <li>Burmese <span class="lvl">Native</span></li>
+                <li>English <span class="lvl">Advanced</span></li>
+                <li>Thai <span class="lvl">Beginner</span></li>
+                <li>Mandarin <span class="lvl">Beginner</span></li>
+            </ul>
+        </div>
+        <div>
+            <p class="subhead">Scholarships</p>
+            <ul class="cred-list">
+                <li>3 fully-funded scholarships across academic career</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== CLOSING ===================== -->
+<div class="closing">
+    <div class="big">Let's build<br>something<span>.</span></div>
+    <p>Open to opportunities at the intersection of AI engineering, data and business strategy, whether in a technical, strategic or cross-functional leadership capacity.</p>
+    <div class="closing-contact">
+        <div><strong>Email</strong>kelvinwai.khantphyo@gmail.com</div>
+        <div><strong>Phone</strong>+66 92 091 0228</div>
+        <div><strong>Web</strong>khantphyowai.vercel.app</div>
+    </div>
+</div>
+
+</body>
+</html>
