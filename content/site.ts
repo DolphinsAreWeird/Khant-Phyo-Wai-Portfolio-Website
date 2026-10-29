@@ -56,7 +56,7 @@ export const running: Process[] = [
   { name: "Sonar AI", status: "Running", detail: "Co-founder and CFO, in our first months after launch." },
   { name: "Honours thesis", status: "Running", detail: "Can Wikipedia traffic predict library borrowing? Final test in December." },
   { name: "Athena", status: "Running", detail: "Research project: one approved source for CMKL's handbooks and chatbot." },
-  { name: "LAB404", status: "Running", detail: "Apprentice since 2024. Just built an app that teaches RL to high-schoolers." },
+  { name: "LAB404", status: "Running", detail: "Project manager since 2024. Just built an app that teaches RL to high-schoolers." },
   { name: "Classes", status: "Running", detail: "A full fourth-year load. QPA 3.78." },
   { name: "Competitions", status: "Running", detail: "About twenty in 2026. Latest: 3rd of almost 400, built in 24 hours." },
   { name: "True Alpha internship", status: "Done", detail: "Led five interns at True Corporation. We won." },
@@ -469,12 +469,13 @@ export const changelog: Release[] = [
   },
   {
     version: "2024.04",
-    title: "Apprentice, AI engineering and business analysis",
-    org: "LAB404, CMKL",
+    title: "Project manager",
+    org: "LAB404 Innovation Lab, CMKL",
     when: "2024 to now",
     notes: [
-      "Business plans, budgets and AI image pipelines for lab projects shown at CMKL's AI Engineering and Innovation Summit 2024.",
-      "Started as a designer intern making game assets with AI; later built and ran the lab's website.",
+      "Managed six student projects across AI, games and simulation, leading cross-disciplinary teams on scope, timelines, budgets and pitches. Two were exhibited at CMKL's AI Engineering and Innovation Summit 2024.",
+      "Built the hard parts when a project needed them: a real-time AI art pipeline, a Unity lift simulation and the art for a scam-awareness game.",
+      "Wrote the lab's incubator funding proposal and built and ran its website.",
     ],
   },
   {
