@@ -1,0 +1,200 @@
+.project {
+  margin-top: clamp(48px, 6vw, 80px);
+  padding-top: 28px;
+  border-top: 6px solid var(--proj);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 5.2vw, 4.25rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+.swatch {
+  width: 0.36em;
+  height: 0.36em;
+  flex: none;
+  background: var(--proj);
+  border-radius: 3px;
+  transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.project:hover .swatch {
+  transform: rotate(45deg);
+}
+
+.summary {
+  margin-top: 14px;
+  font-stretch: 87%;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  line-height: 1.3;
+  max-width: 30ch;
+}
+
+.facts {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.facts > div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--hair);
+}
+
+.facts dt,
+.context dt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.facts dd {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.visual figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+/* The button that opens the decision record. */
+.record {
+  margin-top: 26px;
+}
+
+.opener {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 2px solid var(--proj);
+  color: var(--ink);
+  font-weight: 650;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.opener:hover,
+.record[open] .opener {
+  background: var(--proj-wash);
+}
+
+.opener .chevron {
+  color: var(--proj);
+}
+
+.recordBody {
+  padding-top: 32px;
+}
+
+.prose h4 {
+  margin-top: 26px;
+  font-stretch: 75%;
+  font-weight: 750;
+  font-size: 1.2rem;
+}
+
+.prose h4:first-child {
+  margin-top: 0;
+}
+
+.prose h4 + p,
+.prose h4 + ul {
+  margin-top: 8px;
+}
+
+.decisions {
+  display: grid;
+  gap: 12px;
+}
+
+.decisions li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.decisions li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--proj);
+  transform: rotate(45deg);
+}
+
+.flow {
+  margin: 34px 0;
+}
+
+.flow figcaption {
+  margin-bottom: 14px;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+.context {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hair);
+}
+
+.context > div {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 12px;
+}
+
+.context dd {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.links a {
+  text-decoration-color: var(--proj);
+}
+
+.links span {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+@media (max-width: 900px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+}

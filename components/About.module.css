@@ -1,0 +1,73 @@
+.body {
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.body > p + p {
+  margin-top: 1.1em;
+}
+
+.portrait {
+  width: min(100%, 280px);
+  margin-bottom: 28px;
+}
+
+.portrait img {
+  border: 2px solid var(--ink);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 78%;
+}
+
+.portrait figcaption {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+@media (min-width: 1120px) {
+  .portrait {
+    float: right;
+    clear: right;
+    width: var(--side);
+    margin: 6px calc(-1 * (var(--side) + var(--gap))) 28px 0;
+  }
+}
+
+.facts {
+  margin-top: 40px;
+  border-top: 2px solid var(--ink);
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--hair);
+}
+
+.fact dt {
+  font-stretch: 75%;
+  font-weight: 700;
+}
+
+.fact dd {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-top: 1px;
+}
+
+@media (max-width: 520px) {
+  .fact {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+.goal {
+  font-stretch: 87%;
+  font-weight: 650;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}

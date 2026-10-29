@@ -1,0 +1,26 @@
+.page {
+  display: grid;
+  justify-items: start;
+  gap: 20px;
+  padding-block: clamp(80px, 14vw, 160px);
+}
+
+.code {
+  padding: 6px 14px;
+  border: 2px dashed var(--ink);
+  font-stretch: 75%;
+  font-weight: 700;
+}
+
+.title {
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  line-height: 0.9;
+  max-width: 14ch;
+}
+
+.body {
+  max-width: 44ch;
+  color: var(--ink-2);
+}

@@ -1,0 +1,293 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hair);
+  transition: background-color 0.3s ease;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 64px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.mark {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  overflow: visible;
+}
+
+.mark :global(.dolphin-body) {
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+}
+
+/* The dolphin hops when you point at it. */
+.brand:hover .mark :global(.dolphin-body),
+.brand:focus-visible .mark :global(.dolphin-body) {
+  animation: hop 0.7s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+@keyframes hop {
+  40% {
+    transform: translate(2px, -9px) rotate(-14deg);
+  }
+  70% {
+    transform: translate(0, 1px) rotate(4deg);
+  }
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav a {
+  font-size: 0.97rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.contact {
+  padding: 8px 14px;
+  border: 2px solid var(--ink);
+}
+
+.nav .contact:hover {
+  background: var(--ink);
+  color: var(--on-ink);
+  text-decoration: none;
+}
+
+.switches {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Side comments checkbox. */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 2px;
+  border: 0;
+  background: none;
+  color: var(--marker);
+  font-family: var(--font-hand);
+  font-variation-settings: "INFM" 70, "BNCE" 25;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.toggleBox {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+  transform: rotate(-3deg);
+}
+
+.toggle[aria-pressed="true"] .toggleBox::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: -3px;
+  width: 6px;
+  height: 13px;
+  border: solid currentColor;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(40deg);
+  animation: tick 0.25s ease-out;
+}
+
+@keyframes tick {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+.toggle[aria-pressed="false"] {
+  color: var(--ink-2);
+}
+
+.toggleShort {
+  display: none;
+}
+
+/* Light/dark switch: a pill with a sun and a moon, and a knob between them. */
+.theme {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 62px;
+  height: 32px;
+  padding: 0 8px;
+  border: 2px solid var(--ink);
+  border-radius: 99px;
+  background: var(--paper-raised);
+}
+
+.sun,
+.moon {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.sun circle {
+  fill: #f2b544;
+  stroke: none;
+}
+
+.moon path {
+  fill: var(--ink);
+  stroke: none;
+}
+
+.knob {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1), background-color 0.3s ease;
+}
+
+/* Light: the knob covers the moon, so the sun shows. Dark: it slides over. */
+.knob {
+  transform: translateX(30px);
+}
+
+:global(:root[data-theme="dark"]) .knob {
+  transform: translateX(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme="light"])) .knob {
+    transform: translateX(0);
+  }
+
+  :global(:root:not([data-theme="light"])) .labelLight {
+    display: none;
+  }
+
+  :global(:root:not([data-theme="light"])) .labelDark {
+    display: inline;
+  }
+}
+
+.labelDark {
+  display: none;
+}
+
+:global(:root[data-theme="dark"]) .labelLight {
+  display: none;
+}
+
+:global(:root[data-theme="dark"]) .labelDark {
+  display: inline;
+}
+
+.theme:hover .sun {
+  animation: spin 1.2s linear;
+}
+
+.theme:hover .moon {
+  animation: rock 0.8s ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rock {
+  30% {
+    transform: rotate(-18deg);
+  }
+  70% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 960px) {
+  .navItem {
+    display: none;
+  }
+
+  .name {
+    display: none;
+  }
+
+  .inner {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .toggleLong,
+  .themeLabel {
+    display: none;
+  }
+
+  .toggleShort {
+    display: inline;
+  }
+
+  .switches {
+    gap: 10px;
+  }
+
+  .contact {
+    padding: 6px 10px;
+  }
+}

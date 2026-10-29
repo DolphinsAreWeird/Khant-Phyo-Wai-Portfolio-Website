@@ -1,0 +1,259 @@
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 48px);
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.highlight {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+}
+
+.highlight p {
+  margin-top: 6px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.highlight a {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hlName {
+  font-stretch: 75%;
+  font-weight: 750;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.hlVisual {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  background: var(--cobalt-wash);
+  overflow: hidden;
+}
+
+.icarus {
+  background: #fde7ef;
+}
+
+.icarus img {
+  width: 82%;
+  animation: hover-fly 3.2s ease-in-out infinite;
+}
+
+@keyframes hover-fly {
+  50% {
+    transform: translateY(-7px) rotate(-3deg);
+  }
+}
+
+/* Pyaw sample: an input field with its candidate window. */
+.ime {
+  width: 90%;
+  font-size: 11px;
+}
+
+.field {
+  padding: 6px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 5px;
+  background: var(--paper-raised);
+  white-space: nowrap;
+}
+
+.caret {
+  display: inline-block;
+  width: 1.5px;
+  height: 1.1em;
+  margin-left: 1px;
+  vertical-align: -2px;
+  background: var(--cobalt);
+  animation: caret 1s steps(2, jump-none) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.candidates {
+  margin-top: 4px;
+  padding: 4px;
+  border-radius: 5px;
+  background: var(--paper-raised);
+  box-shadow: 0 10px 20px -12px rgba(10, 16, 28, 0.5);
+  animation: pop 4s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0%,
+  12% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  20%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.candidates li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.candidates span {
+  color: var(--ink-2);
+}
+
+.candidates b {
+  font-family: var(--font-myanmar), "Myanmar Sangam MN", "Noto Sans Myanmar", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.picked {
+  background: var(--cobalt);
+  color: #fff;
+}
+
+.picked span {
+  color: inherit;
+  opacity: 0.8;
+}
+
+/* The full table, behind one expand like the journey page. */
+.all {
+  margin-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+
+.allSummary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  font-stretch: 75%;
+  font-weight: 750;
+  font-size: 1.3rem;
+}
+
+.allSummary:hover {
+  color: var(--cobalt);
+}
+
+.tableWrap {
+  padding-bottom: 24px;
+}
+
+.search {
+  width: min(100%, 420px);
+  min-height: 44px;
+  padding: 0 14px;
+  border: 2px solid var(--ink);
+  background: var(--paper-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.table {
+  width: 100%;
+  margin-top: 18px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.table thead th {
+  padding: 8px 14px 8px 0;
+  border-bottom: 2px solid var(--ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--ink-2);
+}
+
+.table tbody th,
+.table tbody td {
+  padding: 10px 14px 10px 0;
+  border-bottom: 1px solid var(--hair);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.table tbody th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.table tbody td:first-child {
+  color: var(--ink-2);
+  width: 4rem;
+}
+
+.table tbody td:last-child {
+  color: var(--ink-2);
+}
+
+.empty {
+  margin-top: 14px;
+  color: var(--ink-2);
+}
+
+@media (max-width: 960px) {
+  .highlights {
+    grid-template-columns: 1fr;
+    max-width: var(--main);
+  }
+}
+
+@media (max-width: 760px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 2px 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .table tbody th,
+  .table tbody td {
+    padding: 0;
+    border: 0;
+    white-space: normal;
+  }
+
+  .table tbody td:nth-child(3),
+  .table tbody td:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 420px) {
+  .highlight {
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 16px;
+  }
+}

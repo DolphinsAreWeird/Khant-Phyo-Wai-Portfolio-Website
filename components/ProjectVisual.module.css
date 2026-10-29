@@ -1,0 +1,513 @@
+.panel {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--proj-wash);
+  isolation: isolate;
+}
+
+/* Phones */
+.phone {
+  position: absolute;
+  width: 31%;
+  border: 6px solid var(--device);
+  border-radius: 26px;
+  overflow: hidden;
+  background: var(--device);
+  box-shadow: 0 24px 40px -24px rgba(10, 16, 28, 0.55);
+  transition: transform 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.phone img {
+  width: 100%;
+}
+
+/* Sonar: two app screens and an inset photo. */
+.phoneLeft {
+  left: 14%;
+  top: 9%;
+  transform: rotate(-6deg);
+}
+
+.phoneRight {
+  left: 43%;
+  top: 14%;
+  transform: rotate(5deg);
+}
+
+.sonar:hover .phoneLeft {
+  transform: rotate(-9deg) translate(-10px, -6px);
+}
+
+.sonar:hover .phoneRight {
+  transform: rotate(8deg) translate(10px, -6px);
+}
+
+.polaroid {
+  position: absolute;
+  right: 4%;
+  bottom: 6%;
+  width: 22%;
+  padding: 5px 5px 18px;
+  background: #fbfbf8;
+  box-shadow: 0 10px 24px -12px rgba(10, 16, 28, 0.6);
+  transform: rotate(4deg);
+  transition: transform 0.35s ease;
+}
+
+.polaroid img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.sonar:hover .polaroid {
+  transform: rotate(-2deg) scale(1.04);
+}
+
+/* RoomWitness: desktop browser plus a phone. */
+.browser {
+  position: absolute;
+  left: 5%;
+  top: 8%;
+  width: 80%;
+  overflow: hidden;
+  border: 1.5px solid var(--hair);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 24px 40px -26px rgba(10, 16, 28, 0.55);
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 9px;
+  background: #e9ece9;
+  border-bottom: 1px solid #d5dad5;
+}
+
+.browserBar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c7ccc7;
+}
+
+.browserBar span {
+  margin-left: 10px;
+  font-size: 10px;
+  color: #6b7380;
+}
+
+.rwPhone {
+  left: auto;
+  right: 5%;
+  top: 30%;
+  width: 24%;
+  border-width: 5px;
+  border-radius: 20px;
+  transform: rotate(3deg);
+}
+
+.rw:hover .rwPhone {
+  transform: rotate(0) translateY(-10px);
+}
+
+/* Argus: a CCTV monitor. */
+.argus {
+  background: #0a0e14;
+}
+
+.argus img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+}
+
+.argus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+}
+
+.rec {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.rec i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff3b30;
+  animation: blink 1.2s steps(2, jump-none) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.15;
+  }
+}
+
+/* Cadence: a sample budget screen. */
+.app {
+  position: absolute;
+  left: 6%;
+  top: 9%;
+  width: 88%;
+  bottom: 9%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--paper-raised);
+  border: 1.5px solid var(--hair);
+  box-shadow: 0 24px 40px -26px rgba(10, 16, 28, 0.55);
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.appBar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--hair);
+  color: var(--ink-2);
+}
+
+.appBar b {
+  margin-right: 8px;
+  color: var(--proj);
+  font-stretch: 75%;
+  font-size: 14px;
+}
+
+.tabOn {
+  color: var(--ink);
+  font-weight: 700;
+  box-shadow: inset 0 -2px var(--proj);
+}
+
+.appBody {
+  display: grid;
+  gap: 11px;
+  padding: 14px 16px;
+}
+
+.appTitle {
+  font-stretch: 75%;
+  font-weight: 750;
+  font-size: 17px;
+}
+
+.appTitle em {
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 99px;
+  background: var(--proj-wash);
+  color: var(--proj);
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: 3px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 6.5em minmax(0, 1fr) 6.5em;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar {
+  height: 9px;
+  border-radius: 99px;
+  background: var(--hair);
+  overflow: hidden;
+}
+
+.fill,
+.fillWarn {
+  display: block;
+  height: 100%;
+  width: var(--w);
+  border-radius: inherit;
+  background: var(--proj);
+}
+
+.fillWarn {
+  background: var(--marker);
+}
+
+.left {
+  text-align: right;
+  color: var(--ink-2);
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--proj-wash);
+  font-size: 11.5px;
+}
+
+.ledger {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  gap: 6px 10px;
+  padding-top: 6px;
+  border-top: 1px solid var(--hair);
+  color: var(--ink-2);
+}
+
+.ledger span:nth-child(3n) {
+  color: var(--ink);
+  text-align: right;
+}
+
+.tick {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--proj);
+  -webkit-mask: radial-gradient(circle, #000 60%, transparent 62%);
+}
+
+/* Seamless: a sample cart screen on its handle. */
+.cart {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  width: 66%;
+  transform: translateX(-50%);
+}
+
+.screen {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 7px solid var(--device);
+  border-radius: 14px;
+  background: var(--paper-raised);
+  font-size: 12px;
+  color: var(--ink);
+  box-shadow: 0 24px 40px -26px rgba(10, 16, 28, 0.55);
+}
+
+.cartBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cartBar b {
+  color: var(--proj);
+  font-stretch: 75%;
+  font-size: 15px;
+}
+
+.cartBar span {
+  color: var(--ink-2);
+  font-size: 11px;
+}
+
+.promo {
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: var(--proj);
+  color: #fff;
+  font-weight: 600;
+  font-size: 11.5px;
+}
+
+.basket {
+  display: grid;
+  gap: 4px;
+}
+
+.basket li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--hair);
+}
+
+.suggest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  border: 1.5px solid var(--proj);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.add {
+  padding: 3px 8px;
+  border-radius: 99px;
+  background: var(--proj-wash);
+  color: var(--proj);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.seamless:hover .add {
+  animation: nudge 0.6s ease-in-out 2;
+}
+
+@keyframes nudge {
+  25% {
+    transform: rotate(-4deg) scale(1.06);
+  }
+  75% {
+    transform: rotate(4deg) scale(1.06);
+  }
+}
+
+.pay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.payBtn {
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-size: 11px;
+}
+
+.handle {
+  height: 11px;
+  margin: 0 -14%;
+  border-radius: 99px;
+  background: var(--device);
+}
+
+/* A wire basket and two wheels under the handle. */
+.wire {
+  height: clamp(44px, 9vw, 92px);
+  margin: 6px 4% 0;
+  border: 3px solid var(--device);
+  border-top-width: 4px;
+  background:
+    repeating-linear-gradient(90deg, var(--device) 0 2px, transparent 2px 16px),
+    repeating-linear-gradient(0deg, var(--device) 0 2px, transparent 2px 16px);
+  opacity: 0.75;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+}
+
+.wheels {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 14% 0;
+}
+
+.wheels i {
+  width: 18px;
+  height: 18px;
+  border: 4px solid var(--device);
+  border-radius: 50%;
+  background: var(--proj-wash);
+}
+
+.seamless:hover .wheels i {
+  animation: roll 0.8s linear 2;
+}
+
+@keyframes roll {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bars grow as the card scrolls into view, where supported. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .fill,
+    .fillWarn {
+      animation: grow linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .app,
+  .screen {
+    font-size: 10px;
+  }
+
+  .appBody {
+    gap: 7px;
+    padding: 10px 12px;
+  }
+
+  .appTitle {
+    font-size: 14px;
+  }
+
+  .appBar {
+    gap: 9px;
+    padding: 7px 10px;
+  }
+
+  .appBar span:nth-child(n + 4) {
+    display: none;
+  }
+
+  .screen {
+    gap: 5px;
+    padding: 8px 10px;
+  }
+
+  .toast {
+    font-size: 9.5px;
+  }
+
+  .cart {
+    top: 5%;
+    width: 72%;
+  }
+
+  .basket li:nth-child(3),
+  .promo {
+    display: none;
+  }
+
+  .wire {
+    height: 34px;
+  }
+}

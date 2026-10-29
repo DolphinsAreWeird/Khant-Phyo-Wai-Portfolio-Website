@@ -1,0 +1,122 @@
+.section {
+  padding-top: clamp(56px, 7vw, 96px);
+}
+
+.table {
+  width: 100%;
+  margin-top: clamp(32px, 4vw, 48px);
+  border-collapse: collapse;
+  border-top: 2px solid var(--ink);
+}
+
+.table thead th {
+  padding: 10px 16px 10px 0;
+  border-bottom: 1px solid var(--hair);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--ink-2);
+}
+
+.table tbody th,
+.table tbody td {
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--hair);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.table tbody th {
+  width: 13rem;
+  font-stretch: 75%;
+  font-weight: 750;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.table tbody td:nth-child(2) {
+  width: 8rem;
+}
+
+.table tbody td:last-child {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cobalt);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cobalt);
+}
+
+/* Running processes breathe; the finished one doesn't. */
+@media (prefers-reduced-motion: no-preference) {
+  .dot {
+    animation: breathe 2.4s ease-in-out infinite;
+  }
+
+  tr:nth-child(2n) .dot {
+    animation-delay: 0.8s;
+  }
+
+  tr:nth-child(3n) .dot {
+    animation-delay: 1.6s;
+  }
+}
+
+@keyframes breathe {
+  50% {
+    box-shadow: 0 0 0 5px var(--cobalt-wash);
+  }
+}
+
+.done th,
+.done td {
+  color: var(--ink-2);
+}
+
+.done .status {
+  color: var(--ink-2);
+}
+
+.done .dot {
+  background: transparent;
+  border: 2px solid currentColor;
+  animation: none;
+}
+
+@media (max-width: 760px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .table tbody th,
+  .table tbody td {
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .table tbody td:last-child {
+    grid-column: 1 / -1;
+  }
+}
