@@ -79,8 +79,9 @@ function Cadence() {
           <b>Cadence</b>
           <span className={styles.tabOn}>Budget</span>
           <span>Ledger</span>
+          <span>People</span>
+          <span>Payroll</span>
           <span>Documents</span>
-          <span>Close</span>
         </div>
         <div className={styles.appBody}>
           <div className={styles.appTitle}>

@@ -267,7 +267,7 @@ export const caseStudies: CaseStudy[] = [
     id: "cadence",
     name: "Cadence",
     color: { light: "#6a4fcf", dark: "#a895ff" },
-    summary: "A full ERP system I built from scratch for Sonar AI. The whole company runs its money through it.",
+    summary: "The ERP Sonar AI runs on, built from scratch: money, people, paperwork and contracts in one system.",
     card: [
       { term: "My job", detail: "Product owner and builder" },
       { term: "When", detail: "Aug 2026 to now" },
@@ -275,7 +275,11 @@ export const caseStudies: CaseStudy[] = [
     ],
     context: [
       { term: "Team", detail: "Me, plus Beam, our bookkeeper turned second developer" },
-      { term: "Covers", detail: "Budgets, accounting, Thai tax documents, payslips, bank reconciliation, contract signing, monthly accounts" },
+      {
+        term: "Modules",
+        detail:
+          "Accounting and live budgets; HR and payroll (employee register, payslips, social security, planned hires); contracts and e-signatures; client invoicing; Thai tax documents; bank feed and reconciliation; month close; monthly accounts; investor page",
+      },
     ],
     problem:
       "Sonar's budget lived in a spreadsheet. Nobody knew the live balance mid-month, every expense waited on one approver, and overspending only showed up at month-end. Tax paperwork came from separate scripts, so the documents and the books could disagree.",
@@ -293,8 +297,8 @@ export const caseStudies: CaseStudy[] = [
       "Every document comes from the ledger row it cites, so a payee's receipt and the books can't drift apart.",
     ],
     myPart:
-      "I started it from an empty project and our Excel ledger in August 2026, wrote the budget plan it enforces, designed the document templates and set the bookkeeping rules. I built it with Claude Code; Beam joined in September and built the month-close tools.",
-    outcome: "Finance staff and directors use it every day. It replaced the ledger workbook and the separate document scripts.",
+      "I started it from an empty project and our Excel ledger in August 2026, wrote the budget plan it enforces, designed the document templates and set the bookkeeping rules. I built it with Claude Code; Beam joined in September and built the month-close tools. It began as a budget tracker and grew into an ERP: HR, payroll, contracts and invoicing followed, and more HR modules are on the way.",
+    outcome: "Staff and directors use it every day. It replaced the ledger workbook, the separate document scripts and the one-person approval queue.",
     stack: "Python, FastAPI, SQLite, WeasyPrint, Docker, Cloudflare Tunnel",
     links: [],
     privateNote: "Private company system. Happy to demo it.",
