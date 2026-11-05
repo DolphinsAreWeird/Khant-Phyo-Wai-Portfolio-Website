@@ -34,7 +34,17 @@ export const metadata: Metadata = {
   title: "Khant Phyo Wai | Product and AI systems",
   description,
   alternates: { canonical: "/" },
-  icons: { apple: "/apple-touch-icon.png" },
+  // Listing icons here replaces Next's automatic tag for app/icon.svg, so every
+  // icon is declared. public/favicon.ico (16, 32 and 48 px, rasterised from
+  // icon.svg) covers Safari and crawlers that skip SVG; its 32x32 size keeps
+  // Chrome and Firefox on the sharper SVG.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "profile",
     url: "/",
